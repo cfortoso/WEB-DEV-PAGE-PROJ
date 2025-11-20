@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Request – Dream Travels</title>
+
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f5f5f5; 
+        }
+        header {
+            background-color: #0074D9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #005bb0;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        section { padding: 20px; }
+        .box {
+            background: white; 
+            padding: 20px; 
+            margin-bottom: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        label { display: block; margin-top: 10px; }
+        input, select {
+            width: 100%; 
+            padding: 8px; 
+            margin-top: 5px;
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .price-table th {
+            background-color: #e0e0e0;
+        }
+        .total-box {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px; 
+            padding: 10px 18px;
+            background-color: #0074D9; 
+            color: white;
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+        button:hover { background-color: #005bb0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Booking Request – 7 Day Packages</h1>
+    <p>Choose your destination, number of travelers, and payment details.</p>
+</header>
+
+<nav>
+    <a href="Website.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <div class="box">
+        <h2>7-Day Package Prices (Per Person)</h2>
+        <p class="note">All packages are for 7 days and 6 nights. Prices are estimated for project purposes.</p>
+        <table class="price-table">
+            <tr>
+                <th>Destination</th>
+                <th>7-Day Package Price (Per Person)</th>
+            </tr>
+            <tr>
+                <td>Venice, Italy</td>
+                <td>$1,800</td>
+            </tr>
+            <tr>
+                <td>Cancún, Mexico</td>
+                <td>$1,200</td>
+            </tr>
+            <tr>
+                <td>Tokyo, Japan</td>
+                <td>$2,200</td>
+            </tr>
+            <tr>
+                <td>Bahamas</td>
+                <td>$1,500</td>
+            </tr>
+            <tr>
+                <td>Mexico City, Mexico</td>
+                <td>$900</td>
+            </tr>
+            <tr>
+                <td>Paris, France</td>
+                <td>$1,900</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box">
+        <h2>Trip Details & Payment</h2>
+
+        <form onsubmit="return sendBooking()">
+            <!-- Trip info -->
+            <label for="fullname">Full Name:</label>
+            <input id="fullname" type="text" placeholder="Your full name" required>
+
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+
+            <label for="destination">Choose Destination (7-Day Package):</label>
+            <select id="destination" required onchange="updateTotal()">
+                <option value="">Select a destination</option>
+                <option value="venice">Venice, Italy</option>
+                <option value="cancun">Cancún, Mexico</option>
+                <option value="tokyo">Tokyo, Japan</option>
+                <option value="bahamas">Bahamas</option>
+                <option value="mexicocity">Mexico City, Mexico</option>
+                <option value="paris">Paris, France</option>
+            </select>
+
+            <label for="dates">Preferred Travel Dates:</label>
+            <input id="dates" type="text" placeholder="e.g. June 10 - June 17" required>
+
+            <label for="travelers">Number of Travelers:</label>
+            <input id="travelers" type="number" min="1" value="1" required oninput="updateTotal()">
+
+            <label for="discount">Discount Code (optional):</label>
+            <input id="discount" type="text" placeholder="Enter code (e.g. UHD10)" oninput="updateTotal()">
+
+            <div class="total-box">
+                Total Price for 7 Days: <span id="total-amount">$0.00</span><br>
+                <span id="discount-note" class="note"></span>
+            </div>
+            <p class="note">Total = (Price per person × Travelers), with discounts applied if valid.</p>
+
+            <!-- Payment info (simulated) -->
+            <h3>Payment Information</h3>
+
+            <label for="cardname">Name on Card:</label>
+            <input id="cardname" type="text" placeholder="As shown on card" required>
+
+            <label for="cardnumber">Card Number:</label>
+            <input id="cardnumber" type="text" placeholder="1234 5678 9012 3456" required>
+
+            <label for="exp">Expiration Date (MM/YY):</label>
+            <input id="exp" type="text" placeholder="08/28" required>
+
+            <label for="cvv">CVV:</label>
+            <input id="cvv" type="password" placeholder="123" required>
+
+            <button type="submit">Confirm Booking & Pay</button>
+        </form>
+
+        <p class="note">
+            *This is a sample payment form for a class project only. No real charges are made.
+        </p>
+    </div>
+</section>
+
+<script>
+    // 7-day package prices per person
+    const packagePrices = {
+        venice: 1800,
+        cancun: 1200,
+        tokyo: 2200,
+        bahamas: 1500,
+        mexicocity: 900,
+        paris: 1900
+    };
+
+    function formatCurrency(amount) {
+        return "$" + amount.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    function updateTotal() {
+        const destination = document.getElementById("destination").value;
+        const travelers = parseInt(document.getElementById("travelers").value, 10) || 0;
+        const discountCode = document.getElementById("discount").value.trim().toUpperCase();
+        const totalSpan = document.getElementById("total-amount");
+        const discountNote = document.getElementById("discount-note");
+
+        if (!destination || travelers <= 0) {
+            totalSpan.textContent = "$0.00";
+            discountNote.textContent = "";
+            return;
+        }
+
+        const pricePerPerson = packagePrices[destination];
+        let total = pricePerPerson * travelers;
+        let message = "";
+
+        if (discountCode === "UHD10") {
+            total = total * 0.9; // 10% off
+            message = "UHD10 discount applied: 10% off total price.";
+        } else if (discountCode.length > 0) {
+            message = "Invalid discount code. No discount applied.";
+        }
+
+        totalSpan.textContent = formatCurrency(total);
+        discountNote.textContent = message;
+    }
+
+    function getQueryParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+    }
+
+    // Preselect destination and travelers from URL (e.g., booking.html?dest=venice&trav=2)
+    document.addEventListener("DOMContentLoaded", function () {
+        const destParam = getQueryParam("dest");
+        const travParam = getQueryParam("trav");
+
+        const destSelect = document.getElementById("destination");
+        const travInput = document.getElementById("travelers");
+
+        if (destParam && packagePrices[destParam]) {
+            destSelect.value = destParam;
+        }
+
+        if (travParam) {
+            const t = parseInt(travParam, 10);
+            if (!isNaN(t) && t > 0) {
+                travInput.value = t;
+            }
+        }
+
+        updateTotal();
+    });
+
+    function sendBooking() {
+        const destinationSelect = document.getElementById("destination");
+        const destinationValue = destinationSelect.value;
+        const destinationText = destinationSelect.options[destinationSelect.selectedIndex].text;
+        const travelers = parseInt(document.getElementById("travelers").value, 10) || 0;
+        const totalText = document.getElementById("total-amount").textContent;
+
+        if (!destinationValue || travelers <= 0) {
+            alert("Please select a destination and enter a valid number of travelers.");
+            return false;
+        }
+
+        alert(
+            "Booking Confirmed!\n\n" +
+            "Destination: " + destinationText + "\n" +
+            "Travelers: " + travelers + "\n" +
+            "Package Length: 7 days\n" +
+            "Total Price: " + totalText + "\n\n" +
+            "This is a simulated payment for a class project. No real charges were made."
+        );
+
+        return false; // prevent actual form submission
+    }
+</script>
+
+</body>
+</html>

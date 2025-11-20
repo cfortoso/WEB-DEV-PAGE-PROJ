@@ -59,6 +59,21 @@
             border-radius: 8px;
         }
 
+        /* NEW BOOK NOW BUTTON */
+        .book-btn {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .book-btn:hover {
+            background-color: #1e7e34;
+        }
+
         footer {
             background-color: #0074D9;
             color: white;
@@ -77,44 +92,56 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Destinations</a>
-        <a href="#">Booking</a>
-        <a href="#">Travel Tips</a>
-        <a href="#">About Us</a>
+        <a href="Website.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <!-- Main Content -->
     <section>
         <h2>Popular Destinations</h2>
 
+        <!-- Venice -->
         <div class="destination-card">
             <h3>Italy, Venice</h3>
-            <img src="https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg" alt="Maldives">
+            <a href="venice.html">
+                <img src="https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg" alt="Venice">
+            </a>
             <p>
-                Venice, Italy is a romantic city built on water, known for its beautiful canals, 
-                gondola rides, and historic architecture. From St. Mark’s Square to the Rialto Bridge, 
-                Venice offers unforgettable scenery and timeless charm.
+                Venice, Italy is a romantic city built on water, known for canals, gondolas,
+                and historic architecture.
             </p>
+            <a href="venice.html"><strong>Learn More →</strong></a><br>
+            <a href="booking.html" class="book-btn">Book Now</a>
         </div>
 
+        <!-- Cancun -->
         <div class="destination-card">
             <h3>Mexico, Cancun</h3>
-            <img src="https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg" alt="Paris">
+            <a href="cancun.html">
+                <img src="https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg" alt="Cancún">
+            </a>
             <p>
-                Cancún is a tropical getaway known for its turquoise waters, white-sand beaches, 
-                and exciting resort life. It’s perfect for relaxing, exploring Mayan ruins, or enjoying vibrant nightlife.
+                Cancún is known for its turquoise waters, white-sand beaches, and exciting resort life.
             </p>
+            <a href="cancun.html"><strong>Learn More →</strong></a><br>
+            <a href="booking.html" class="book-btn">Book Now</a>
         </div>
 
+        <!-- Tokyo -->
         <div class="destination-card">
             <h3>Tokyo, Japan</h3>
-            <img src="https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685" alt="Tokyo">
+            <a href="tokyo.html">
+                <img src="https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685" alt="Tokyo">
+            </a>
             <p>
-                A perfect blend of modern technology and deep traditional culture. 
-                Explore temples, street food, and neon-lit city life.
+                Tokyo blends modern city life with cultural traditions, temples, food, and neon lights.
             </p>
+            <a href="tokyo.html"><strong>Learn More →</strong></a><br>
+            <a href="booking.html" class="book-btn">Book Now</a>
         </div>
+
     </section>
 
     <!-- Footer -->
