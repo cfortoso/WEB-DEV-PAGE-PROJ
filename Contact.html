@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Dream Travels</title>
+
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f5f5f5; 
+        }
+        header {
+            background-color: #0074D9;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            background-color: #005bb0;
+            padding: 12px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        section { padding: 20px; }
+        .box {
+            background: white; 
+            padding: 20px; 
+            margin-bottom: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        label { display: block; margin-top: 10px; }
+        input, textarea {
+            width: 100%; 
+            padding: 8px; 
+            margin-top: 5px;
+            border-radius: 4px; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 15px; 
+            padding: 10px 18px;
+            background-color: #0074D9; 
+            color: white;
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+        }
+        button:hover { background-color: #005bb0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<nav>
+    <a href="Website.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+    <div class="box">
+        <h2>Get in Touch</h2>
+        <p>Have questions or need help planning a trip? Send us a message below.</p>
+
+        <form onsubmit="return sendMessage()">
+            
+            <label for="name">Name:</label>
+            <input id="name" type="text" placeholder="Your name">
+
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="you@example.com">
+
+            <label for="destination">Destination You’re Interested In:</label>
+            <input id="destination" type="text" placeholder="Venice, Cancun, Tokyo, etc.">
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" placeholder="Type your message here..."></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <p style="margin-top:10px; font-size: 0.9em;">
+            *This is a demo form for educational purposes.
+        </p>
+    </div>
+</section>
+
+<script>
+function sendMessage() {
+    alert("Thank you! Your message has been sent. We will get back to you soon.");
+    return false; // prevents real submission for project
+}
+</script>
+
+</body>
+</html>
