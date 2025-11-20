@@ -17,7 +17,31 @@
         }
 
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        a { text-decoration: none; color: inherit; }
+        a { text-decoration: none; }
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            background-color: #0074D9;
+            padding: 15px;
+            text-align: center;
+            position: sticky; /* Keeps nav at top when scrolling */
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b3d7ff; /* Lighter blue on hover */
+        }
 
         /* --- HERO SECTION --- */
         header {
@@ -126,77 +150,78 @@
 
 <body>
 
-<header>
-    <h1>Our Destinations</h1>
-    <p>Explore the world with us. Where will you go next?</p>
-</header>
+    <header>
+        <h1>Our Destinations</h1>
+        <p>Explore the world with us. Where will you go next?</p>
+    </header>
 
-<nav>
-    <a href="website.html">Home</a>
-    <a href="destinations.html" style="color:#008cba;">Destinations</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <nav>
+        <a href="website.html">Home</a>
+        <a href="destinations.html" style="color:#008cba;">Destinations</a>
+        <a href="booking.html">Booking</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-<div class="container">
-    <div class="destinations-grid">
+    <div class="container">
+        <div class="destinations-grid">
 
-        <a href="cancun.html" class="card">
-            <img src="https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg" alt="Cancun" class="card-img">
-            <div class="card-content">
-                <h3>Cancún, Mexico</h3>
-                <p>Beaches & Ruins</p>
-                <span class="btn-view">View Details</span>
-            </div>
-        </a>
+            <a href="cancun.html" class="card">
+                <img src="https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg" alt="Cancun" class="card-img">
+                <div class="card-content">
+                    <h3>Cancún, Mexico</h3>
+                    <p>Beaches & Ruins</p>
+                    <span class="btn-view">View Details</span>
+                </div>
+            </a>
 
-        <a href="venice.html" class="card">
-            <img src="https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg" alt="Venice" class="card-img">
-            <div class="card-content">
-                <h3>Venice, Italy</h3>
-                <p>Canals & History</p>
-                <span class="btn-view">View Details</span>
-            </div>
-        </a>
+            <a href="venice.html" class="card">
+                <img src="https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg" alt="Venice" class="card-img">
+                <div class="card-content">
+                    <h3>Venice, Italy</h3>
+                    <p>Canals & History</p>
+                    <span class="btn-view">View Details</span>
+                </div>
+            </a>
 
-        <a href="tokyo.html" class="card">
-            <img src="https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685" alt="Tokyo" class="card-img">
-            <div class="card-content">
-                <h3>Tokyo, Japan</h3>
-                <p>Neon & Tradition</p>
-                <span class="btn-view">View Details</span>
-            </div>
-        </a>
+            <a href="tokyo.html" class="card">
+                <img src="https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685" alt="Tokyo" class="card-img">
+                <div class="card-content">
+                    <h3>Tokyo, Japan</h3>
+                    <p>Neon & Tradition</p>
+                    <span class="btn-view">View Details</span>
+                </div>
+            </a>
 
-        <a href="bahamas.html" class="card">
-            <img src="https://images.unsplash.com/photo-1544550581-5f7ceaf7f992" alt="Bahamas" class="card-img">
-            <div class="card-content">
-                <h3>Bahamas</h3>
-                <p>Island Paradise</p>
-                <span class="btn-view">View Details</span>
-            </div>
-        </a>
+            <a href="bahamas.html" class="card">
+                <img src="https://images.unsplash.com/photo-1544550581-5f7ceaf7f992" alt="Bahamas" class="card-img">
+                <div class="card-content">
+                    <h3>Bahamas</h3>
+                    <p>Island Paradise</p>
+                    <span class="btn-view">View Details</span>
+                </div>
+            </a>
 
-        <a href="mexico_city.html" class="card">
-            <img src="https://images.unsplash.com/photo-1585464231875-d9cae9e030bd" alt="Mexico City" class="card-img">
-            <div class="card-content">
-                <h3>Mexico City</h3>
-                <p>Culture & Cuisine</p>
-                <span class="btn-view">View Details</span>
-            </div>
-        </a>
+            <a href="mexico_city.html" class="card">
+                <img src="https://images.unsplash.com/photo-1585464231875-d9cae9e030bd" alt="Mexico City" class="card-img">
+                <div class="card-content">
+                    <h3>Mexico City</h3>
+                    <p>Culture & Cuisine</p>
+                    <span class="btn-view">View Details</span>
+                </div>
+            </a>
 
-        <a href="paris.html" class="card">
-            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris" class="card-img">
-            <div class="card-content">
-                <h3>Paris, France</h3>
-                <p>City of Lights</p>
-                <span class="btn-view">View Details</span>
-            </div>
-        </a>
+            <a href="paris.html" class="card">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris" class="card-img">
+                <div class="card-content">
+                    <h3>Paris, France</h3>
+                    <p>City of Lights</p>
+                    <span class="btn-view">View Details</span>
+                </div>
+            </a>
 
+        </div>
     </div>
-</div>
 
 </body>
 </html>

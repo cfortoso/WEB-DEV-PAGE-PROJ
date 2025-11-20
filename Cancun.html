@@ -17,6 +17,31 @@
             }
         
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        a {text-decoration: none;}
+
+        /* --- NAVIGATION BAR --- */
+        nav {
+            background-color: #0074D9; 
+            padding: 15px;
+            text-align: center;
+            position: sticky; /* Keeps nav at top when scrolling */
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b3d7ff; /* Lighter blue on hover */
+        }
 
        .hero {
             background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
@@ -95,16 +120,6 @@
 
         .btn-check:hover { background-color: #ee5253; }
 
-        /* --- Navigation --- */
-        .nav-back {
-            display: block;
-            text-align: center;
-            margin: 40px 0;
-            text-decoration: none;
-            color: #008cba;
-            font-weight: bold;
-        }
-
         /* --- RESPONSIVE (Mobile view) --- */
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; } /* Stack columns on phone */
@@ -115,63 +130,71 @@
 
 <body>
 
-<div class="hero">
-        <div class="hero-content">
-            <h1>Cancún</h1>
-            <p>The Caribbean Dream Awaits</p>
-        </div>
-    </div>
+    <nav>
+        <a href="Website.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="booking.html">Booking</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <div class="container">
-        
-        <div class="card">
-            <h2>Why Visit?</h2>
-            <p>
-                Cancún is more than just a beach; it is the gateway to the Mayan world. 
-                Experience the perfect blend of relaxation on turquoise shores and 
-                adventure in ancient ruins like Chichén Itzá.
-            </p>
-            <br>
-            <p>
-                Whether you want to swim in hidden cenotes or enjoy world-class nightlife, 
-                Cancún offers a tropical escape like no other.
-            </p>
+    <div class="hero">
+            <div class="hero-content">
+                <h1>Cancún</h1>
+                <p>The Caribbean Dream Awaits</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Trip Planner</h2>
-            <div class="info-list">
-                <p><span class="label">Best Season:</span> December – April</p>
-                <p><span class="label">Flight Cost:</span> <span id="flight-price">$250 – $450</span></p>
-                <p><span class="label">Hotel Cost:</span> $110 – $300 / night</p>
+        <div class="container">
+            
+            <div class="card">
+                <h2>Why Visit?</h2>
+                <p>
+                    Cancún is more than just a beach; it is the gateway to the Mayan world. 
+                    Experience the perfect blend of relaxation on turquoise shores and 
+                    adventure in ancient ruins like Chichén Itzá.
+                </p>
+                <br>
+                <p>
+                    Whether you want to swim in hidden cenotes or enjoy world-class nightlife, 
+                    Cancún offers a tropical escape like no other.
+                </p>
             </div>
 
-            <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
-            <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
+            <div class="card">
+                <h2>Trip Planner</h2>
+                <div class="info-list">
+                    <p><span class="label">Best Season:</span> December – April</p>
+                    <p><span class="label">Flight Cost:</span> <span id="flight-price">$250 – $450</span></p>
+                    <p><span class="label">Hotel Cost:</span> $110 – $300 / night</p>
+                </div>
+
+                <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+                <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
+            </div>
+
         </div>
 
-    </div>
+        <a href="website.html" class="nav-back">← Back to All Destinations</a>
 
-    <a href="website.html" class="nav-back">← Back to All Destinations</a>
-
-    <script>
-        // A simple JavaScript function to simulate fetching data
-        function checkLiveDeals() {
-            const resultElement = document.getElementById('deal-result');
-            const priceElement = document.getElementById('flight-price');
-            
-            resultElement.innerText = "Searching airlines...";
-            
-            // Wait 1.5 seconds to make it feel like it's "thinking"
-            setTimeout(() => {
-                // Generate a random discount
-                let randomDiscount = Math.floor(Math.random() * 50) + 20;
+        <script>
+            // A simple JavaScript function to simulate fetching data
+            function checkLiveDeals() {
+                const resultElement = document.getElementById('deal-result');
+                const priceElement = document.getElementById('flight-price');
                 
-                priceElement.innerHTML = `<strike>$450</strike> <strong>$${450 - randomDiscount}</strong> (Flash Sale!)`;
-                resultElement.innerText = `We found a discount of $${randomDiscount} active today!`;
-            }, 1500);
-        }
-    </script>
+                resultElement.innerText = "Searching airlines...";
+                
+                // Wait 1.5 seconds to make it feel like it's "thinking"
+                setTimeout(() => {
+                    // Generate a random discount
+                    let randomDiscount = Math.floor(Math.random() * 50) + 20;
+                    
+                    priceElement.innerHTML = `<strike>$450</strike> <strong>$${450 - randomDiscount}</strong> (Flash Sale!)`;
+                    resultElement.innerText = `We found a discount of $${randomDiscount} active today!`;
+                }, 1500);
+            }
+        </script>
 
 </body>
 </html>
