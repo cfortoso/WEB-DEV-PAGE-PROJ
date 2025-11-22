@@ -1,4 +1,4 @@
-f<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,10 @@ f<!DOCTYPE html>
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f0f2f5;
         }
 
         header {
@@ -19,20 +19,21 @@ f<!DOCTYPE html>
             background-position: center;
             height: 250px;
             color: white;
-            text-shadow: 2px 2px 5px black;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        header h1 {
-            font-size: 2.8rem;
-        }
+        header h1 { font-size: 3rem; margin: 0; }
 
         nav {
             background-color: #0074D9;
             padding: 15px;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative; 
+            z-index: 10;
         }
 
         nav a {
@@ -40,7 +41,11 @@ f<!DOCTYPE html>
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
         }
+        
+        nav a:hover { color: #cce5ff; }
 
         section {
             padding: 20px;
@@ -51,37 +56,72 @@ f<!DOCTYPE html>
 
         .booking-box {
             background: white;
-            padding: 25px;
-            margin: 20px auto;
+            padding: 30px;
+            /* Pushes the box down so it does not overlap the menu */
+            margin: 40px auto; 
             max-width: 500px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .booking-box label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
         }
 
         .booking-box input,
         .booking-box select {
             width: 100%;
             padding: 12px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
+            margin-top: 5px;
+            border: 1px solid #ddd;
             border-radius: 6px;
-            box-sizing: border-box; /* Ensures padding doesn't break width */
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .booking-box input:focus, 
+        .booking-box select:focus {
+            border-color: #0074D9;
+            outline: none;
+        }
+
+        /* Styling for the price display box */
+        #price-display {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0074D9;
+            border: 1px dashed #0074D9;
         }
 
         .booking-box button {
             width: 100%;
             background-color: #0074D9;
             color: white;
-            padding: 12px;
+            padding: 14px;
             border: none;
             border-radius: 6px;
             margin-top: 20px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
         }
 
         .booking-box button:hover {
             background-color: #005fa8;
+        }
+
+        .booking-box button:active {
+            transform: scale(0.98);
         }
 
         #result {
@@ -90,20 +130,19 @@ f<!DOCTYPE html>
             background: #e8f8e8;
             border-left: 5px solid #2ecc71;
             border-radius: 6px;
-            display: none; /* Hidden until needed */
+            display: none;
+            text-align: left;
         }
 
-        /*  Class to hide elements easily */
-        .hidden {
-            display: none;
-        }
+        .hidden { display: none; }
 
         footer {
-            background-color: #0074D9;
-            color: white;
+            background-color: #333;
+            color: #ccc;
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -117,33 +156,32 @@ f<!DOCTYPE html>
         <a href="index.html">Home</a>
         <a href="destinations.html">Destinations</a>
         <a href="tips.html">Travel Tips</a>
-        <a href="booking.html" style="background-color: white; color: #0074D9; padding: 5px 15px; border-radius: 20px;">Booking</a>
         <a href="about.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
-
+        <a href="booking.html">Booking</a>
     </nav>
 
     <section>
-        <h2>Trip Booking Form</h2>
-
         <div class="booking-box">
+            <h2 style="margin-top:0; color:#0074D9;">Plan Your Getaway</h2>
 
             <label>Destination</label>
-            <select id="destination">
-                <option value="">Choose a destination</option>
-                <option value="Italy, Venice">Italy, Venice</option>
-                <option value="Mexico, Cancun">Mexico, Cancun</option>
-                <option value="Tokyo, Japan">Tokyo, Japan</option>
-                <option value="Bahamas">Bahamas</option>
-                <option value="Mexico City">Mexico City</option>
-                <option value="Paris, France">Paris, France</option>
+            <select id="destination" onchange="calculateTotal()">
+                <option value="" data-price="0">Choose a destination</option>
+                <option value="Bahamas, Nassau" data-price="1100">Bahamas, Nassau ($1,100/person)</option>
+                <option value="France, Paris" data-price="1400">France, Paris ($1,400/person)</option>
+                <option value="Italy, Venice" data-price="1200">Italy, Venice ($1,200/person)</option>
+                <option value="Mexico, Cancun" data-price="800">Mexico, Cancun ($800/person)</option>
+                <option value="Mexico, Mexico City" data-price="750">Mexico, Mexico City ($750/person)</option>
+                <option value="Tokyo, Japan" data-price="1500">Tokyo, Japan ($1,500/person)</option>
             </select>
 
             <label>Travel Date</label>
             <input type="date" id="date">
 
             <label>Number of People</label>
-            <input type="number" id="people" min="1" value="1">
+            <input type="number" id="people" min="1" value="1" oninput="calculateTotal()">
+
+            <div id="price-display">Total Cost: $0</div>
 
             <label>Your Email</label>
             <input type="email" id="email" placeholder="you@example.com" required>
@@ -158,10 +196,10 @@ f<!DOCTYPE html>
 
             <div id="card-details" class="hidden">
                 <label>Card Number</label>
-                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19">
 
                 <label>CVV</label>
-                <input type="number" id="cvv" placeholder="123" min="100" max="999">
+                <input type="text" id="cvv" placeholder="123" maxlength="3">
             </div>
 
             <button onclick="bookTrip()">Confirm Booking</button>
@@ -175,12 +213,39 @@ f<!DOCTYPE html>
     </footer>
 
     <script>
-        //  Function to show/hide card fields
+        // Sets the minimum date to today so users cannot pick past dates
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById("date").setAttribute('min', today);
+            calculateTotal();
+        };
+
+        // Calculates the total cost based on destination and number of people
+        function calculateTotal() {
+            const destSelect = document.getElementById("destination");
+            const peopleInput = document.getElementById("people");
+            
+            // Gets the price from the HTML data attribute
+            const selectedOption = destSelect.options[destSelect.selectedIndex];
+            const pricePerPerson = selectedOption.getAttribute('data-price') || 0;
+            const peopleCount = peopleInput.value || 0;
+            
+            const total = pricePerPerson * peopleCount;
+            document.getElementById("price-display").innerText = "Total Cost: $" + total.toLocaleString();
+        }
+
+        // Adds spaces to the credit card number automatically as user types
+        document.getElementById('cardNumber').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, ''); 
+            value = value.replace(/(.{4})/g, '$1 ').trim();
+            e.target.value = value;
+        });
+
+        // Hides or shows the credit card input fields based on selection
         function togglePaymentFields() {
             const paymentMethod = document.getElementById("payment").value;
             const cardDetails = document.getElementById("card-details");
 
-            // Shows fields if Card is chosen
             if (paymentMethod === "Credit Card" || paymentMethod === "Debit Card") {
                 cardDetails.style.display = "block"; 
             } else {
@@ -189,52 +254,59 @@ f<!DOCTYPE html>
         }
 
         function bookTrip() {
-
-            const destination = document.getElementById("destination").value;    // Gets the selected destination from the dropdown
-            const date = document.getElementById("date").value;                  // Gets the selected travel date
-            const people = document.getElementById("people").value;              // Gets number of people entered by the user
-            const email = document.getElementById("email").value;                // Gets the user's email address
-            
-            //  Gets payment info
+            // Gets the selected destination from the dropdown
+            const destination = document.getElementById("destination").value;
+            // Gets the selected travel date
+            const date = document.getElementById("date").value;
+            // Gets number of people entered by the user
+            const people = document.getElementById("people").value;
+            // Gets the user's email address
+            const email = document.getElementById("email").value;
+            // Gets the selected payment method
             const payment = document.getElementById("payment").value;
+            // Gets the card number input
             const cardNumber = document.getElementById("cardNumber").value;
-            const cvv = document.getElementById("cvv").value;
-
-            const resultBox = document.getElementById("result");                 // This area will display the booking result
+            
+            // This area will display the booking result
+            const resultBox = document.getElementById("result");
 
             // Checks if any of the fields were left empty
             if (!destination || !date || !people || !email || !payment) {
-                resultBox.style.display = "block"; // Shows result box
-                resultBox.innerHTML = "Please fill in all fields.";
+                resultBox.style.display = "block";
+                resultBox.innerHTML = "<span style='color:red'>⚠ Please fill in all fields.</span>";
                 return;
             }
-            
-            //  Validates card info if card is selected
-            if ((payment === "Credit Card" || payment === "Debit Card") && (!cardNumber || !cvv)) {
+
+            // Checks if card number is valid if paying by card
+            if ((payment === "Credit Card" || payment === "Debit Card") && cardNumber.length < 15) {
                  resultBox.style.display = "block"; 
-                 resultBox.innerHTML = "Please enter card details.";
+                 resultBox.innerHTML = "<span style='color:red'>⚠ Please enter a valid card number.</span>";
                  return;
             }
 
             // Checks if the email is valid using a simple pattern
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            //// If email is invalid, show error
+            // If email is invalid, show error
             if (!emailPattern.test(email)) {
                 resultBox.style.display = "block"; 
-                resultBox.innerHTML = "Please enter a valid email address.";
+                resultBox.innerHTML = "<span style='color:red'>⚠ Please enter a valid email address.</span>";
                 return;
             }
+
+            // Recalculate total one last time for the receipt
+            const destSelect = document.getElementById("destination");
+            const price = destSelect.options[destSelect.selectedIndex].getAttribute('data-price');
+            const total = price * people;
 
             // Shows the booking confirmation message on the page
             resultBox.style.display = "block"; 
             resultBox.innerHTML =
-                "<strong>Booking Confirmed!</strong><br>" +
-                "Destination: " + destination + "<br>" +
-                "Date: " + date + "<br>" +
-                "People: " + people + "<br>" +
-                "Payment: " + payment + "<br>" + 
-                "A confirmation email will be sent to: " + email;
+                `<h3 style="margin-top:0; color:#27ae60">Booking Confirmed!</h3>` +
+                `<strong>Trip:</strong> ${destination}<br>` +
+                `<strong>Date:</strong> ${date}<br>` +
+                `<strong>Total Paid:</strong> $${total.toLocaleString()}<br>` +
+                `<em>Confirmation sent to ${email}</em>`;
         }
     </script>
 
