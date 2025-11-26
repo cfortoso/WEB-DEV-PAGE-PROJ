@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phat Duong - CS Student</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Defines the specific colors for the Rick theme */
+        :root {
+            --rick-fur: #F4C688;       /* Hamster body color */
+            --rick-belly: #FFFAE6;     /* Stomach color */
+            --rick-feet: #FF8585;      /* Pink accents */
+            --dark-outline: #4A3627;   /* Dark brown borders */
+            --sky-blue: #87CEEB;       /* Background sky */
+        }
+
+        /* Background */
+        body {
+            background-color: var(--sky-blue);
+            background-image: 
+                radial-gradient(white 15%, transparent 16%),
+                radial-gradient(white 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px; /* Creates dot pattern */
+            font-family: 'VT323', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--dark-outline);
+        }
+
+        /* The main "body" of the hamster card */
+        .card-container {
+            background-color: var(--rick-fur);
+            border: 4px solid var(--dark-outline);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 350px;
+            text-align: center;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.2); /* Retro shadow */
+            position: relative;
+            animation: float 3s ease-in-out infinite; /* Makes entire card float */
+        }
+
+        /* The white stomach area holding text */
+        .card-inner {
+            background-color: var(--rick-belly);
+            border: 2px solid var(--dark-outline);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* The circular profile */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--rick-feet);
+            object-fit: cover;
+            background-color: white;
+            animation: hop 0.6s infinite alternate; /* Floating ani */
+        }
+
+        /* Styling */
+        h1 {
+            font-size: 3rem;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px var(--rick-feet);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            opacity: 0.9;
+            border-bottom: 2px dashed var(--rick-feet);
+        }
+
+        .info-group {
+            margin: 15px 0;
+            font-size: 1.4rem;
+        }
+
+        /* Badges for Python and C++ */
+        .skills-badge {
+            background-color: var(--rick-feet);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            border: 1px solid var(--dark-outline);
+        }
+
+        /* Button style for the email */
+        .email-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--dark-outline);
+            color: var(--rick-fur);
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.1s; /* Smooth hover effect */
+        }
+
+        .email-link:hover {
+            background-color: var(--rick-feet);
+            color: white;
+            transform: scale(1.05); /* Grows slightly on hover */
+        }
+
+        /* Animation Part */
+        /* Moves image up and down quickly */
+        @keyframes hop {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+
+        /* Moves card up and down slowly */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Visual feet at the bottom */
+        .feet {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin-top: -20px;
+            z-index: -1;
+            position: relative;
+        }
+        .foot {
+            width: 60px;
+            height: 30px;
+            background-color: var(--rick-feet);
+            border: 3px solid var(--dark-outline);
+            border-radius: 0 0 20px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <img src="https://media1.tenor.com/m/h9OkwW7YliYAAAAC/rick-celebrate.gif" alt="Rick Kirby Celebrating" class="profile-img">
+        
+        <h1>Phat Duong</h1>
+        <h2>CS Student</h2>
+
+        <div class="card-inner">
+            <div class="info-group">
+                🎓 <strong>UHD</strong>
+                <div style="font-size: 0.8em; opacity: 0.8;">University of Houston-Downtown</div>
+            </div>
+
+            <div class="info-group">
+                <span>Code:</span>
+                <span class="skills-badge">Python</span>
+                <span class="skills-badge">C++</span>
+            </div>
+            
+            <a href="mailto:phatduong1202@gmail.com" class="email-link">
+                ✉ phatduong1202.com
+            </a>
+        </div>
+
+        <div class="feet">
+            <div class="foot"></div>
+            <div class="foot"></div>
+        </div>
+    </div>
+
+</body>
+</html>
