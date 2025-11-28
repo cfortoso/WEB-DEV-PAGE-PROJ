@@ -1,66 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahamas – Booking Info</title>
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahamas – Tropical Escape</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f5f5f5;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
         }
 
-        img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        a { text-decoration: none; }
+
+        /* NAVIGATION */
+        nav {
+            background-color: #0074D9;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .box {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #0074D9;
+        nav a {
+            color: white;
             font-weight: bold;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: #b3d7ff; }
+
+        /* HERO IMAGE */
+        .hero {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* GRID LAYOUT */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 20px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card h2 {
+            color: #008cba;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .info-list p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .label { font-weight: bold; color: #555; }
+
+        /* BUTTON */
+        .btn-check {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .btn-check:hover { background-color: #ee5253; }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Bahamas</h1>
+    <nav>
+        <a href="Website.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="tips.html">Travel Tips</a>
+        <a href="booking.html">Booking</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
 
-    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Bahamas">
-
-    <div class="box">
-        <h2>Why Visit the Bahamas?</h2>
-        <p>
-            The Bahamas offers crystal-clear waters, soft sandy beaches, and a relaxed island vibe.
-            It’s perfect for swimming, snorkeling, and spending time at oceanfront resorts.
-        </p>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Bahamas</h1>
+            <p>Paradise in Every Shade of Blue</p>
+        </div>
     </div>
 
-    <div class="box">
-        <h2>Booking Information</h2>
-        <p><strong>Average Flight Cost:</strong> $350 – $650 round trip</p>
-        <p><strong>Hotel Range:</strong> $150 – $350 per night</p>
-        <p><strong>Best Travel Months:</strong> December – April</p>
-        <p><strong>Recommended Activities:</strong> Beach days, snorkeling, boat tours, island hopping.</p>
+    <div class="container">
+
+        <div class="card">
+            <h2>Why Visit the Bahamas?</h2>
+            <p>
+                The Bahamas offers crystal-clear waters, pink-sand beaches, and a relaxing island vibe. 
+                Explore coral reefs, enjoy boat tours between islands, and experience the beauty of Caribbean sunsets.
+            </p>
+            <br>
+            <p>
+                Whether you're seeking luxury resorts, underwater adventures, or peaceful beach days, 
+                the Bahamas is one of the Caribbean’s top escapes.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Trip Planner</h2>
+
+            <div class="info-list">
+                <p><span class="label">Best Season:</span> December – April</p>
+                <p><span class="label">Flight Cost:</span> <span id="flight-price">$350 – $650</span></p>
+                <p><span class="label">Hotel Cost:</span> $150 – $350 / night</p>
+                <p><span class="label">Top Activities:</span> Snorkeling, boat tours, beaches, island hopping</p>
+            </div>
+
+            <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+            <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
+        </div>
+
     </div>
 
-    <a href="destinations.html">← Back to Destinations</a> |
-    <a href="Website.html">Home</a>
-    <a href="TravelTips.html">Travel Tips</a>
+    <a href="destinations.html" class="nav-back" style="display:block; text-align:center; margin-bottom:40px;">
+        ← Back to All Destinations
+    </a>
 
+    <script>
+        function checkLiveDeals() {
+            const resultElement = document.getElementById('deal-result');
+            const priceElement = document.getElementById('flight-price');
+
+            resultElement.innerText = "Checking airlines...";
+
+            setTimeout(() => {
+                let discount = Math.floor(Math.random() * 60) + 20;
+
+                priceElement.innerHTML = `<strike>$650</strike> <strong>$${650 - discount}</strong> (Flash Sale!)`;
+                resultElement.innerText = `Special Bahamas deal! Save $${discount} today.`;
+            }, 1500);
+        }
+    </script>
 
 </body>
-
 </html>
