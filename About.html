@@ -47,6 +47,7 @@
       font-size: 1rem;
       color: #fff;
       opacity: 0.85;
+      text-decoration: none;
     }
 
     nav a:hover {
@@ -118,6 +119,7 @@
       padding: 0.7rem 1.5rem;
       border-radius: 25px;
       transition: 0.3s;
+      text-decoration: none;
     }
 
     .btn-primary:hover {
@@ -207,6 +209,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 1rem;
+      margin-top: 1rem;
     }
 
     .value-card {
@@ -255,8 +258,8 @@
       color: #0a2540;
     }
 
-    /* TEAM SECTION */
-    .team {
+    /* TEAM DESCRIPTION SECTION */
+    .team-intro {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2rem;
@@ -264,10 +267,64 @@
       margin-bottom: 3rem;
     }
 
-    .team img {
+    .team-intro img {
       width: 100%;
       border-radius: 18px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    /* NEW SPECIFIC TEAM MEMBERS STYLES */
+    .team-profiles-section {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-member-card {
+      background: #fff;
+      padding: 2rem 1rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 200px; /* Fixed width for uniformity */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .member-icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      background-color: #f0f2f5;
+      border: 3px solid #0077ff; /* Matching brand color */
+    }
+
+    .member-link {
+      font-weight: bold;
+      color: #0a2540;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .member-link:hover {
+      color: #0077ff;
+      border-bottom: 2px solid #0077ff;
     }
 
     footer {
@@ -294,7 +351,6 @@
 
 <main>
 
-  <!-- HERO SECTION -->
   <section class="hero fade-in">
     <div class="fade-in">
       <div class="hero-tagline">Exploriva Travel • About Us</div>
@@ -318,7 +374,6 @@
     </div>
   </section>
 
-  <!-- STATS -->
   <section class="stats-section fade-in">
     <div class="stat-card fade-in">
       <h3>1+ Years</h3>
@@ -338,7 +393,6 @@
     </div>
   </section>
 
-  <!-- OUR STORY -->
   <section class="story fade-in">
     <div class="fade-in">
       <h2 class="section-title">Our Story</h2>
@@ -361,7 +415,6 @@
     </div>
   </section>
 
-  <!-- MISSION & VALUES -->
   <section class="mission-values fade-in">
 
     <div class="mission-box fade-in">
@@ -408,8 +461,7 @@
 
   </section>
 
-  <!-- TIMELINE -->
- <section class="timeline fade-in">
+  <section class="timeline fade-in">
   <h2 class="section-title">How Exploriva Became What It Is</h2>
   <br />
   <ul class="timeline-list">
@@ -432,8 +484,7 @@
   </ul>
 </section>
 
-  <!-- TEAM -->
-  <section class="team fade-in">
+  <section class="team-intro fade-in">
     <div class="fade-in">
       <h2 class="section-title">The Exploriva Team</h2>
       <p>
@@ -451,7 +502,8 @@
       <img src="https://lovinglifeco.com/wp-content/uploads/2023/05/employees-brainstorming-in-a-team-meeting-1024x726.jpg" class="zoom-in" alt="Exploriva team members collaborating">
     </div>
   </section>
-<section class="team-profiles-section fade-in">
+
+  <section class="team-profiles-section fade-in">
     <h2 class="section-title">Meet Our Leads</h2>
     
     <div class="team-grid">
@@ -490,7 +542,6 @@
   © <span id="year"></span> Exploriva Travel. All rights reserved.
 </footer>
 
-<!-- SCROLL ANIMATION SCRIPT -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
