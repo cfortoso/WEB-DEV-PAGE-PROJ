@@ -7,72 +7,233 @@
     <title>Contact – Dream Travels</title>
 
     <style>
+        :root {
+            --primary: #0074D9;
+            --primary-dark: #005bb0;
+            --accent: #ffdd57;
+            --bg: #f5f7fb;
+            --card-bg: #ffffff;
+            --text-dark: #222;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background: linear-gradient(135deg, #e3f2fd, #f5f7fb);
+            color: var(--text-dark);
         }
 
+        /* Top bar / header */
         header {
-            background-color: #0074D9;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
+            padding: 25px 15px;
             text-align: center;
-            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2.1rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 6px 0 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* NAVIGATION */
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
             background-color: #005bb0;
-            padding: 12px;
+            padding: 10px 0;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 14px;
             font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 10px;
+            border-radius: 999px;
+            transition: background 0.2s ease, color 0.2s ease;
         }
 
-        section {
-            padding: 20px;
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        nav a.active {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* MAIN LAYOUT */
+        main {
+            max-width: 1000px;
+            margin: 30px auto 40px;
+            padding: 0 20px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 800px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
         }
 
         .box {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            background: var(--card-bg);
+            padding: 22px 22px 24px;
+            border-radius: 14px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
         }
 
+        .box h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .box p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* FORM STYLES */
         label {
             display: block;
-            margin-top: 10px;
+            margin-top: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 8px;
+            padding: 9px 10px;
             margin-top: 5px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+            border-radius: 8px;
+            border: 1px solid #cfd8e3;
             box-sizing: border-box;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            background: #fdfdfd;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.18);
+            background: #ffffff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         button {
-            margin-top: 15px;
-            padding: 10px 18px;
-            background-color: #0074D9;
+            margin-top: 18px;
+            padding: 10px 22px;
+            background: var(--primary);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 999px;
             cursor: pointer;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
         }
 
         button:hover {
-            background-color: #005bb0;
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(0, 91, 176, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .demo-note {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* CONTACT INFO SIDE */
+        .contact-info-item {
+            margin-bottom: 16px;
+        }
+
+        .contact-info-label {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .contact-info-value {
+            font-size: 0.92rem;
+            color: #444;
+        }
+
+        .highlight {
+            display: inline-block;
+            background: rgba(255, 221, 87, 0.25);
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .map-placeholder {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            border: 1px dashed #b0bec5;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #607d8b;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -80,7 +241,8 @@
 <body>
 
     <header>
-        <h1>Contact Us</h1>
+        <h1>Contact Dream Travels</h1>
+        <p>We’re here to help with questions, ideas, or trip planning.</p>
     </header>
 
     <nav>
@@ -89,38 +251,73 @@
         <a href="tips.html">Travel Tips</a>
         <a href="booking.html">Bookings</a>
         <a href="about.html">About Us</a>
-        <a href="contact.html"
-            style="background-color: white; color: #0074D9; padding: 5px 15px; border-radius: 20px;">Contact Us</a>
+        <a href="contact.html" class="active">Contact Us</a>
         <a href="reviews.html">Reviews</a>
     </nav>
 
-    <section>
-        <div class="box">
-            <h2>Get in Touch</h2>
-            <p>Have questions or need help planning a trip? Send us a message below.</p>
+    <main>
+        <div class="contact-layout">
+            <!-- LEFT: FORM -->
+            <div class="box">
+                <h2>Get in Touch</h2>
+                <p>Have questions, need suggestions, or working on a class project? Send us a message and we’ll get back
+                    to you soon.</p>
 
-            <form onsubmit="return sendMessage()">
+                <form onsubmit="return sendMessage()">
 
-                <label for="name">Name:</label>
-                <input id="name" type="text" placeholder="Your name">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Your name" required>
 
-                <label for="email">Email:</label>
-                <input id="email" type="email" placeholder="you@example.com">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="you@example.com" required>
 
-                <label for="destination">Destination You’re Interested In:</label>
-                <input id="destination" type="text" placeholder="Venice, Cancun, Tokyo, etc.">
+                    <label for="destination">Destination You’re Interested In</label>
+                    <input id="destination" type="text" placeholder="Venice, Cancun, Tokyo, etc.">
 
-                <label for="message">Message:</label>
-                <textarea id="message" rows="5" placeholder="Type your message here..."></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
 
-                <button type="submit">Send Message</button>
-            </form>
+                    <button type="submit">Send Message</button>
 
-            <p style="margin-top:10px; font-size: 0.9em;">
-                *This is a demo form for educational purposes.
-            </p>
+                    <p class="demo-note">
+                        *This is a demo form for educational purposes. No real emails are sent.
+                    </p>
+                </form>
+            </div>
+
+            <!-- RIGHT: CONTACT INFO / EXTRA TEXT -->
+            <div class="box" style="animation-delay: 0.15s;">
+                <h2>Contact Information</h2>
+                <p>Prefer to reach out another way? Use the sample details below for your project.</p>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Email</div>
+                    <div class="contact-info-value">support@dreamtravels.com</div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Phone</div>
+                    <div class="contact-info-value">+1 (555) 123-4567</div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Office Hours</div>
+                    <div class="contact-info-value">Monday – Friday, 9:00 AM – 5:00 PM</div>
+                    <div class="highlight">Central Time (CT)</div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Location</div>
+                    <div class="contact-info-value">UHD Dream Travels Center, Houston, TX</div>
+                </div>
+
+                <div class="map-placeholder">
+                    Map placeholder<br>
+                    (You can add an image or an embedded map here later if needed.)
+                </div>
+            </div>
         </div>
-    </section>
+    </main>
 
     <script>
         function sendMessage() {
