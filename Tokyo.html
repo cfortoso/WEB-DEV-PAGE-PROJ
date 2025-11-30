@@ -13,20 +13,64 @@
 
         body { 
             font-family: 'Open Sans', sans-serif;
-            background-color: #f0f4f8;
+            background: linear-gradient(135deg, #e3f2fd, #f0f4f8);
             color: #333;
             line-height: 1.6;
         }
         
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        a { text-decoration: none; }
 
-        /* Hero section */
+        /* NAVBAR (similar to Venice) */
+        nav {
+            background-color: #0074D9;
+            padding: 12px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            margin: 0 14px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-bottom: 4px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #ffdd57;
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO (similar structure to Venice) */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), 
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), 
                 url('https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685');
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 65vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,116 +78,210 @@
             text-align: center;
         }
 
+        .hero-content {
+            max-width: 700px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 3.3rem;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         .hero-content p {
-            font-size: 1.5rem;
-            font-weight: 300;
+            font-size: 1.3rem;
+            margin-top: 10px;
+            margin-bottom: 18px;
         }
 
-        /* Main content container */
+        .hero-buttons {
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 9px 22px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: #ffdd57;
+            color: #333;
+            border: 2px solid #ffdd57;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px) scale(1.04);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.45);
+        }
+
+        /* MAIN CONTENT CONTAINER – GRID */
         .container {
             max-width: 1100px;
-            margin: -50px auto 20px;
+            margin: -40px auto 30px;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 24px;
         }
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            padding: 26px 26px 28px;
+            border-radius: 14px;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.9s ease forwards;
+            opacity: 0;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.12s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.16);
         }
 
         .card h2 {
             color: #008cba;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            font-size: 1rem;
         }
 
         .info-list p {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
+            margin-bottom: 8px;
+            font-size: 0.96rem;
         }
 
         .label {
-            font-weight: bold;
+            font-weight: 700;
             color: #555;
         }
 
-        .btn-check {
+        /* BUTTONS INSIDE CARD */
+        .btn-check,
+        .btn-book {
             display: inline-block;
+            padding: 9px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-check {
             background-color: #ff6b6b;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 15px;
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s;
+            margin-top: 14px;
         }
 
         .btn-check:hover {
             background-color: #ee5253;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(238, 82, 83, 0.4);
         }
 
-        /* NEW BOOK NOW BUTTON */
         .btn-book {
-            display: inline-block;
             background-color: #008cba;
             color: white;
-            padding: 12px 22px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background 0.3s ease;
+            margin-top: 14px;
         }
 
         .btn-book:hover {
             background-color: #0073a1;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0,115,161,0.4);
+        }
+
+        .card-actions {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         /* Back nav link */
         .nav-back {
             display: block;
             text-align: center;
-            margin: 40px 0;
+            margin: 10px 0 40px;
             text-decoration: none;
             color: #008cba;
             font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .nav-back:hover {
+            text-decoration: underline;
         }
 
         /* Responsive layout */
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-content p { font-size: 1.05rem; }
+        }
+
+        /* SIMPLE ANIMATION */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+    <nav>
+        <a href="Website.html">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="tips.html">Travel Tips</a>
+        <a href="booking.html">Booking</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
     <!-- Hero section -->
     <div class="hero">
         <div class="hero-content">
             <h1>Tokyo</h1>
             <p>The City of Neon and Tradition</p>
+
+            <!-- Creator line like Venice -->
+            <p style="margin-top: 10px; font-size: 1rem; opacity: 0.95;">
+                This trip overview was created by <strong>Cesar</strong>
+            </p>
+
+            <!-- Profile button similar to Venice -->
+            <div class="hero-buttons">
+                <a href="cesar_profile.html" class="btn-primary">Visit My Profile</a>
+            </div>
         </div>
     </div>
 
@@ -152,16 +290,16 @@
         
         <!-- Why Visit card -->
         <div class="card">
-            <h2>Why Visit?</h2>
+            <h2>Why Visit Tokyo?</h2>
             <p>
                 Tokyo is a city where ancient temples stand beside futuristic skyscrapers. 
-                Explore peaceful shrines, bustling markets, anime districts, and high-tech shopping streets 
-                all in the same day.
+                Explore peaceful shrines like Senso-ji in Asakusa, shop for anime and electronics in Akihabara,
+                and walk across the famous Shibuya Crossing under glowing billboards.
             </p>
-            <br>
             <p>
-                From sushi bars and ramen shops to neon-lit crossings like Shibuya, 
-                Tokyo offers an unforgettable mix of culture, food, and nightlife.
+                Spend your days visiting Tokyo Skytree or Tokyo Tower for panoramic city views, relaxing in Ueno Park,
+                and trying fresh sushi at Toyosu Market. In the evenings, discover ramen shops, themed cafés,
+                karaoke, and vibrant nightlife in neighborhoods like Shinjuku and Shibuya.
             </p>
         </div>
 
@@ -169,21 +307,25 @@
         <div class="card">
             <h2>Trip Planner</h2>
             <div class="info-list">
-                <p><span class="label">Best Season:</span> March – May, October – November</p>
+                <p><span class="label">Best Season:</span> March – May (cherry blossoms), October – November (fall colors)</p>
                 <p><span class="label">Flight Cost:</span> <span id="flight-price">$900 – $1500</span></p>
                 <p><span class="label">Hotel Cost:</span> $80 – $200 / night</p>
+                <p><span class="label">Top Activities:</span> Shibuya Crossing, Senso-ji Temple, Akihabara anime district, 
+                    Tokyo Skytree, Harajuku shopping, Odaiba waterfront
+                </p>
             </div>
 
-            <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
-            <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
+            <div class="card-actions">
+                <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+                <a href="booking.html?dest=tokyo" class="btn-book">Book Now</a>
+            </div>
 
-            <!-- NEW BOOK NOW BUTTON -->
-            <a href="booking.html?dest=tokyo" class="btn-book">Book 7-Day Package</a>
+            <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
         </div>
 
     </div>
 
-    <a href="Website.html" class="nav-back">← Back to All Destinations</a>
+    <a href="destinations.html" class="nav-back">← Back to All Destinations</a>
 
     <script>
         function checkLiveDeals() {
