@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Punjan Subedi — Personal Webpage</title>
+
+  <!-- Different fonts: Body = Inter, Headings = Merriweather -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --fg:#f1f5f9; --muted:#e2e8f0; --accent:#38bdf8;
+      --green:#34d399; --yellow:#fbbf24; --pink:#f472b6; --red:#f87171; --violet:#a78bfa;
+    }
+    *{box-sizing:border-box}
+
+    /* ----------------- ANIMATION on background ------------------ */
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;
+      color:var(--fg);
+      min-height:100svh;
+      background:url("Punjan.jpeg") center/cover fixed no-repeat;
+      animation:bgMove 8s linear infinite alternate;
+    }
+    @keyframes bgMove{
+      0%{background-position:center;}
+      50%{background-position:center top;}
+      100%{background-position:center;}
+    }
+
+    header{padding:48px 20px 24px;text-align:center}
+    header h1{
+      margin:0;font-size:2.4rem;letter-spacing:.4px;
+      font-family:'Merriweather',serif;
+      text-shadow:0 2px 4px rgba(0,0,0,.7);
+    }
+    header p{
+      margin:10px auto 0;max-width:720px;color:var(--muted);
+      text-shadow:0 1px 3px rgba(0,0,0,.6);
+    }
+
+    main{
+      display:grid;gap:28px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      max-width:1100px;margin:28px auto 60px;padding:0 20px;
+    }
+
+    /* ---------------- BOX MODEL DEMONSTRATION ---------------- */
+    .card {
+        background: rgba(173, 216, 230, 0.3);  /* Content area = light blue */
+        border: 4px solid red;                 /* Border = red */
+        padding: 30px;                         /* Padding inside border */
+        margin: 25px;                          /* Margin outside border */
+        border-radius: 16px;
+        box-shadow: none;
+}
+
+
+
+    .center{text-align:center}
+
+    /* ---------------- ANIMATION on avatar ---------------- */
+    .avatar{
+      width:200px;height:200px;border-radius:50%;object-fit:cover;
+      border:2px solid rgba(31,41,55,0.7);
+      margin-bottom:15px;display:block;margin-left:auto;margin-right:auto;
+      transition:all .3s ease;
+      animation:avatarSpin 8s ease-in-out infinite;
+    }
+    @keyframes avatarSpin{
+      0%{transform:scale(1) rotate(0deg);}
+      25%{transform:scale(1.05) rotate(5deg);}
+      50%{transform:scale(1.1) rotate(0deg);}
+      75%{transform:scale(1.05) rotate(-5deg);}
+      100%{transform:scale(1) rotate(0deg);}
+    }
+    .avatar:hover{box-shadow:0 0 20px rgba(56,189,248,.6);transform:scale(1.05)}
+
+    .links a{
+      display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;
+      background:rgba(15,23,42,0.7);border:1px solid rgba(31,41,55,0.6);
+      text-decoration:none;color:var(--fg);backdrop-filter:blur(2px);
+    }
+    .links a:hover{border-color:var(--accent);box-shadow:0 0 0 3px rgba(56,189,248,.15)}
+
+    h2{
+      margin:.2rem 0 .8rem;font-size:1.3rem;
+      font-family:'Merriweather',serif;
+      text-shadow:0 1px 2px rgba(0,0,0,.7);
+    }
+
+    .intro{line-height:1.7;color:#f8fafc;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+
+    footer{max-width:1100px;margin:0 auto 48px;color:var(--muted);padding:0 20px;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+
+    /* Table styling */
+    .table-wrap{overflow:auto;border-radius:12px;border:1px solid rgba(31,41,55,.5)}
+    table{width:100%;border-collapse:collapse;min-width:520px;background:rgba(15,23,42,.7);backdrop-filter:blur(3px)}
+    thead th{position:sticky;top:0;background:rgba(15,23,42,.9)}
+    th,td{padding:12px 14px;text-align:left;border-bottom:1px solid rgba(31,41,55,.5)}
+    tbody tr:hover{background:rgba(30,41,59,.7)}
+    tbody tr:nth-child(odd){background:rgba(17,24,39,.7)}
+
+    /* Form styling */
+    form{display:grid;gap:12px}
+    label{font-size:.95rem;color:var(--muted);text-shadow:0 1px 2px rgba(0,0,0,.6)}
+    input,textarea,select{
+      width:100%;padding:10px 12px;border-radius:10px;
+      border:1px solid rgba(31,41,55,.6);background:rgba(15,23,42,.6);
+      color:var(--fg);backdrop-filter:blur(2px);
+    }
+    input:focus,textarea:focus,select:focus{
+      outline:none;border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(56,189,248,.15)
+    }
+    .row{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+    .btn{
+      cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:12px;border:1px solid rgba(31,41,55,.6);
+      background:rgba(15,23,42,.8);color:var(--fg);backdrop-filter:blur(2px);
+    }
+    .btn:hover{border-color:var(--accent);box-shadow:0 0 0 3px rgba(56,189,248,.15)}
+    .note{color:var(--muted);font-size:.9rem;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+
+    ul.clean{margin:0;padding-left:18px}
+    ul.clean li{margin:6px 0}
+    details{border:1px solid rgba(31,41,55,.6);border-radius:12px;padding:10px 12px;background:rgba(15,23,42,.6);backdrop-filter:blur(2px)}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;color:var(--muted)}
+
+    .text-accent{color:var(--accent)}
+    .text-green{color:var(--green)}
+    .text-yellow{color:var(--yellow)}
+    .text-pink{color:var(--pink)}
+    .text-red{color:var(--red)}
+    .text-violet{color:var(--violet)}
+    .chip{
+      display:inline-block;padding:.18rem .5rem;border-radius:.6rem;
+      border:1px solid rgba(39,48,67,.7);background:rgba(15,23,42,.6);
+      font-size:.85rem;backdrop-filter:blur(2px);
+    }
+
+    /* ---------------- MEDIA QUERY ---------------- */
+    @media(max-width:600px){
+      header h1{font-size:1.8rem;}
+      .avatar{width:150px;height:150px;}
+      .card{padding:14px;margin:6px;}
+      main{gap:18px;}
+      table{min-width:100%;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👋 Hi, I'm <span class="text-accent">Punjan Subedi</span></h1>
+    <p>Undergraduate student • Software Development Enthusiast • Researcher in Multimodal Deep Learning for Protein Ubiquitination</p>
+  </header>
+
+  <main>
+    <!-- Profile / Links -->
+    <section class="card center">
+      <img class="avatar" src="src/3c9c28eb-d3fe-4eea-88b9-e43797aab142.jpg" alt="Portrait of Punjan Subedi" />
+      <h2>Quick Links</h2>
+      <p>You can contact me on my LinkedIn:</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/pranjan-subedi-106932352" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Full Introduction restored -->
+    <section class="card">
+      <h2>Introduction</h2>
+      <p class="intro">
+        My name is Punjan Subedi and I am from the beautiful country of <span class="text-yellow chip">Nepal</span>. I am currently pursuing my undergraduate degree, and throughout my academic journey, I have developed a strong passion for <span class="text-pink chip">software development</span> and <span class="text-violet chip">research</span>. From a young age, I was fascinated by how technology can solve real-world problems, and that curiosity has fueled my determination to build a career at the intersection of software engineering and artificial intelligence.
+      </p>
+      <p class="intro">
+        As an undergraduate student, I dedicate much of my time to learning programming languages, understanding computer systems, and practicing software design. My interests primarily lie in developing clean, efficient, and reliable applications, and I am constantly motivated to enhance my skills in <span class="text-green chip">data structures</span>, <span class="text-green chip">algorithms</span>, and full-stack development. Beyond technical coursework, I am an enthusiastic learner who enjoys collaborating with peers, contributing to projects, and exploring creative approaches to problem-solving.
+      </p>
+      <p class="intro">
+        Alongside software development, I have developed a strong interest in research. Recently, I had the opportunity to work on <span class="text-accent chip">multimodal deep learning</span> research focused on <span class="text-accent chip">protein ubiquitination</span> in collaboration with Dr. Subash Chandra Pakhrin. This project was both challenging and rewarding, as it required me to apply <span class="text-accent chip">machine learning</span> techniques to biological data. I explored data preprocessing strategies for protein sequences, experimented with neural architectures, and analyzed results using rigorous evaluation metrics. The project not only strengthened my technical and analytical skills but also sparked my interest in <span class="text-violet chip">bioinformatics</span> and the potential of AI to advance life sciences.
+      </p>
+      <p class="intro">
+        Looking forward, my goal is to bridge the gap between robust software engineering and impactful AI research. I aspire to contribute to innovations that empower researchers, improve healthcare, and create meaningful technology solutions. Outside of academics, I enjoy reading research papers, participating in open-source communities, and expanding my knowledge of emerging trends in deep learning and software engineering. I believe that curiosity, persistence, and effective communication are the foundations of success, and I strive to uphold these values in every endeavor I pursue.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section class="card">
+      <h2>Selected Projects (List)</h2>
+      <ul class="clean intro">
+        <li><strong>ResLysEmbed</strong> — A residual CNN for lysine ubiquitination prediction using sequence embeddings and ablation studies.</li>
+        <li><strong>TweetSent</strong> — Twitter sentiment analysis with 1D-CNN and BiLSTM baselines on stratified folds.</li>
+        <li><strong>OS Utilities</strong> — C programs for file parsing, CLI flags, and process management demonstrations.</li>
+        <li><strong>Personal Web</strong> — This page: responsive cards, semantic HTML, and vanilla CSS with accessible components.</li>
+      </ul>
+      <details class="intro" style="margin-top:10px">
+        <summary>See more ideas and future work</summary>
+        <ul class="clean" style="margin-top:8px">
+          <li>Protein PTM multi-task predictors with shared encoders</li>
+          <li>Vision-language retrieval for bio-figure captions</li>
+          <li>Lightweight RAG for course notes</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Table -->
+    <section class="card">
+      <h2>Programming Languages (Table)</h2>
+      <div class="table-wrap">
+        <table aria-label="Programming languages and proficiency">
+          <thead>
+            <tr><th>Language</th><th>Proficiency</th><th>Experience</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Python</td><td>Advanced</td><td>3+ years</td><td>ML/DL, data tooling, scripting</td></tr>
+            <tr><td>C / C++</td><td>Intermediate</td><td>2+ years</td><td>OS assignments, performance-critical code</td></tr>
+            <tr><td>JavaScript</td><td>Intermediate</td><td>2 years</td><td>DOM, basic SPA patterns, tooling</td></tr>
+            <tr><td>HTML5 / CSS</td><td>Advanced</td><td>3+ years</td><td>Responsive layouts, accessibility-first</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Tip: Hover over rows. Header stays sticky while scrolling.</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="card">
+      <h2>Skills & Interests</h2>
+      <ul class="intro clean">
+        <li>Languages &amp; Tools: Python, C/C++, JavaScript, HTML5/CSS, Git</li>
+        <li>Areas: Deep Learning, NLP, Bioinformatics, Web Development</li>
+        <li>Research: Multimodal architectures for protein ubiquitination</li>
+        <li>Soft Skills: Communication, teamwork, problem solving, documentation</li>
+      </ul>
+    </section>
+
+    <!-- Form -->
+    <section class="card">
+      <h2>Ask Me a Question (Form)</h2>
+      <p class="intro">Whether it's about programming, research, or coursework, send me a quick note below.</p>
+      <form id="contactForm" novalidate>
+        <div class="row">
+          <div>
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="e.g., Alex" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="">Select a topic…</option>
+              <option>Programming</option>
+              <option>Research (AI/Bioinformatics)</option>
+              <option>Coursework</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="urgency">Urgency</label>
+            <select id="urgency" name="urgency">
+              <option>Normal</option>
+              <option>High</option>
+              <option>Low</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your question here…" required></textarea>
+        </div>
+        <div>
+          <button class="btn" type="submit">Send Message</button>
+        </div>
+        <p id="formNote" class="note" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="y"></span> Punjan Subedi - "Thanks For Visiting."
+  </footer>
+
+  <script>
+    // 👋 Show a welcome message when the page loads
+    window.addEventListener('load', function() {
+    alert("Welcome to Punjan Subedi's Personal Webpage!");
+    });
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const form=document.getElementById('contactForm');
+    const note=document.getElementById('formNote');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!form.checkValidity()){
+        note.textContent='Please fill out all required fields correctly.';
+        return;
+      }
+      const data=Object.fromEntries(new FormData(form).entries());
+      note.textContent='Thanks, '+(data.name||'there')+'! Your message was captured.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
