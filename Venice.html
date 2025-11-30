@@ -1,153 +1,255 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Venice – Italy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venice – Italy</title>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-        <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #f0f4f8);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        a { text-decoration: none; }
+
+        /* NAVBAR */
+        nav {
+            background-color: #0074D9;
+            padding: 12px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            margin: 0 14px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-bottom: 4px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #ffdd57;
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            background-image:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                url('https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 3.3rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            margin-bottom: 18px;
+        }
+
+        .hero-buttons {
+            margin-top: 15px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 9px 22px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: #ffdd57;
+            color: #333;
+            border: 2px solid #ffdd57;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px) scale(1.04);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.45);
+        }
+
+        /* CONTAINER GRID */
+        .container {
+            max-width: 1100px;
+            margin: -40px auto 30px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            padding: 26px 26px 28px;
+            border-radius: 14px;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.9s ease forwards;
+            opacity: 0;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.12s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.16);
+        }
+
+        .card h2 {
+            color: #008cba;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .info-list p {
+            margin-bottom: 8px;
+            font-size: 0.96rem;
+        }
+
+        .label { font-weight: 700; color: #555; }
+
+        .btn-check,
+        .btn-book {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-check {
+            background-color: #ff6b6b;
+            color: white;
+            margin-top: 14px;
+        }
+
+        .btn-check:hover {
+            background-color: #ee5253;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(238, 82, 83, 0.4);
+        }
+
+        .btn-book {
+            background-color: #28a745;
+            color: white;
+            margin-top: 14px;
+        }
+
+        .btn-book:hover {
+            background-color: #218838;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(33, 136, 56, 0.4);
+        }
+
+        .card-actions {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-back {
+            display: block;
+            text-align: center;
+            margin: 10px 0 40px;
+            font-size: 0.95rem;
+            color: #0074D9;
+        }
+
+        .nav-back:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
             }
-
-            body {
-                font-family: 'Open Sans', sans-serif;
-                background-color: #f0f4f8;
-                color: #333;
-                line-height: 1.6;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
 
-            h1,
-            h2,
-            h3 {
-                font-family: 'Montserrat', sans-serif;
-            }
-
-            a {
-                text-decoration: none;
-            }
-
-            /* NAVBAR */
-            nav {
-                background-color: #0074D9;
-                padding: 15px;
-                text-align: center;
-                position: sticky;
-                top: 0;
-                z-index: 1000;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
-
-            nav a {
-                color: white;
-                font-weight: bold;
-                margin: 0 15px;
-                font-size: 1.1rem;
-                transition: color 0.3s;
-            }
-
-            nav a:hover {
-                color: #b3d7ff;
-            }
-
-            /* Image*/
-            .hero {
-                background-image:
-                    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                    url('https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg');
-                background-size: cover;
-                background-position: center;
-                height: 60vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 4rem;
-                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-            }
-
-            .hero-content p {
-                font-size: 1.5rem;
-                margin-top: 10px;
-            }
-
-            /* CONTAINER GRID */
+        @media (max-width: 768px) {
             .container {
-                max-width: 1100px;
-                margin: -50px auto 20px;
-                padding: 0 20px;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
+                grid-template-columns: 1fr;
             }
-
-            .card {
-                background: white;
-                padding: 30px;
-                border-radius: 12px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
+            .hero-content h1 {
+                font-size: 2.6rem;
             }
-
-            .card:hover {
-                transform: translateY(-5px);
+            .hero-content p {
+                font-size: 1.05rem;
             }
-
-            .card h2 {
-                color: #008cba;
-                margin-bottom: 15px;
-                border-bottom: 2px solid #eee;
-                padding-bottom: 10px;
-            }
-
-            .info-list p {
-                margin-bottom: 10px;
-                font-size: 1.1rem;
-            }
-
-            .label {
-                font-weight: bold;
-                color: #555;
-            }
-
-            /* BUTTON */
-            .btn-check {
-                background-color: #ff6b6b;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 30px;
-                font-weight: bold;
-                cursor: pointer;
-                border: none;
-                transition: background 0.3s;
-                margin-top: 15px;
-            }
-
-            .btn-check:hover {
-                background-color: #ee5253;
-            }
-
-            @media (max-width: 768px) {
-                .container {
-                    grid-template-columns: 1fr;
-                }
-
-                .hero-content h1 {
-                    font-size: 2.5rem;
-                }
-            }
-        </style>
+        }
+    </style>
 </head>
 
 <body>
@@ -159,13 +261,22 @@
         <a href="booking.html">Booking</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
-        <a href="reviews.html">Reviews</a>
     </nav>
 
     <div class="hero">
         <div class="hero-content">
             <h1>Venice</h1>
             <p>The Floating City of Romance</p>
+
+            <!-- Creator Text -->
+            <p style="margin-top: 10px; font-size: 1rem; opacity: 0.95;">
+                This trip overview was created by <strong>Cesar</strong>
+            </p>
+
+            <!-- ONE Button -->
+            <div class="hero-buttons">
+                <a href="cesar_profile.html" class="btn-primary">Visit My Profile</a>
+            </div>
         </div>
     </div>
 
@@ -175,10 +286,8 @@
             <h2>Why Visit Venice?</h2>
             <p>
                 Venice is a magical canal city filled with gondolas, historic bridges, and unforgettable views.
-                Wander through narrow alleyways, explore St. Mark’s Square, and float through iconic waterways on a
-                gondola ride.
+                Wander through narrow alleyways, explore St. Mark’s Square, and float through iconic waterways on a gondola ride.
             </p>
-            <br>
             <p>
                 Whether you're exploring islands like Burano and Murano or enjoying Italian cuisine by the water,
                 Venice is one of Europe's most enchanting destinations.
@@ -195,13 +304,17 @@
                 <p><span class="label">Top Activities:</span> Gondola ride, canal tour, St. Mark’s Basilica</p>
             </div>
 
-            <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+            <div class="card-actions">
+                <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+                <a href="booking.html" class="btn-book">Book Now</a>
+            </div>
+
             <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
         </div>
 
     </div>
 
-    <a href="Website.html" class="nav-back" style="display:block; text-align:center; margin-bottom:40px;">
+    <a href="destinations.html" class="nav-back">
         ← Back to All Destinations
     </a>
 
@@ -222,5 +335,4 @@
     </script>
 
 </body>
-
 </html>
