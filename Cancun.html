@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cancún – Tropical Paradise</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
 
-        * { box-sizing: border-box; margin: 0; padding: 0 }
+        body {
+            font-family: Open Sans, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
 
-        body { 
-                font-family: Open Sans, sans-serif;
-                background-color: #f0f4f8;
-                color: #333;
-                line-height: 1.6;
-            }
-        
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        a {text-decoration: none;}
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
 
         /* --- NAVIGATION BAR --- */
         nav {
-            background-color: #0074D9; 
+            background-color: #0074D9;
             padding: 15px;
             text-align: center;
-            position: sticky; /* Keeps nav at top when scrolling */
+            position: sticky;
+            /* Keeps nav at top when scrolling */
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav a {
@@ -40,15 +54,17 @@
         }
 
         nav a:hover {
-            color: #b3d7ff; /* Lighter blue on hover */
+            color: #b3d7ff;
+            /* Lighter blue on hover */
         }
 
-       .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                    url('https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg');
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg');
             background-size: cover;
             background-position: center;
-            height: 60vh; /* 60% of the screen height */
+            height: 60vh;
+            /* 60% of the screen height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,22 +74,24 @@
 
         .hero-content h1 {
             font-size: 4rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
             margin-bottom: 10px;
         }
 
         .hero-content p {
             font-size: 1.5rem;
             font-weight: 300;
-        } 
+        }
 
         /* Container for content */
         .container {
             max-width: 1100px;
-            margin: -50px auto 20px; /* Pulls content up over the hero image */
+            margin: -50px auto 20px;
+            /* Pulls content up over the hero image */
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two side-by-side columns */
+            grid-template-columns: 1fr 1fr;
+            /* Two side-by-side columns */
             gap: 20px;
         }
 
@@ -81,16 +99,18 @@
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px); /* Slight lift effect on hover */
+            transform: translateY(-5px);
+            /* Slight lift effect on hover */
         }
 
         .card h2 {
-            color: #008cba; /* Tropical Teal */
+            color: #008cba;
+            /* Tropical Teal */
             margin-bottom: 15px;
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
@@ -101,7 +121,10 @@
             font-size: 1.1rem;
         }
 
-        .label { font-weight: bold; color: #555; }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
 
         /* Interactive Button */
         .btn-check {
@@ -118,12 +141,20 @@
             transition: background 0.3s;
         }
 
-        .btn-check:hover { background-color: #ee5253; }
+        .btn-check:hover {
+            background-color: #ee5253;
+        }
 
         /* --- RESPONSIVE (Mobile view) --- */
         @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; } /* Stack columns on phone */
-            .hero-content h1 { font-size: 2.5rem; }
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            /* Stack columns on phone */
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -137,65 +168,67 @@
         <a href="booking.html">Booking</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
+        <a href="reviews.html">Reviews</a>
     </nav>
 
     <div class="hero">
-            <div class="hero-content">
-                <h1>Cancún</h1>
-                <p>The Caribbean Dream Awaits</p>
-            </div>
+        <div class="hero-content">
+            <h1>Cancún</h1>
+            <p>The Caribbean Dream Awaits</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Why Visit?</h2>
+            <p>
+                Cancún is more than just a beach; it is the gateway to the Mayan world.
+                Experience the perfect blend of relaxation on turquoise shores and
+                adventure in ancient ruins like Chichén Itzá.
+            </p>
+            <br>
+            <p>
+                Whether you want to swim in hidden cenotes or enjoy world-class nightlife,
+                Cancún offers a tropical escape like no other.
+            </p>
         </div>
 
-        <div class="container">
-            
-            <div class="card">
-                <h2>Why Visit?</h2>
-                <p>
-                    Cancún is more than just a beach; it is the gateway to the Mayan world. 
-                    Experience the perfect blend of relaxation on turquoise shores and 
-                    adventure in ancient ruins like Chichén Itzá.
-                </p>
-                <br>
-                <p>
-                    Whether you want to swim in hidden cenotes or enjoy world-class nightlife, 
-                    Cancún offers a tropical escape like no other.
-                </p>
+        <div class="card">
+            <h2>Trip Planner</h2>
+            <div class="info-list">
+                <p><span class="label">Best Season:</span> December – April</p>
+                <p><span class="label">Flight Cost:</span> <span id="flight-price">$250 – $450</span></p>
+                <p><span class="label">Hotel Cost:</span> $110 – $300 / night</p>
             </div>
 
-            <div class="card">
-                <h2>Trip Planner</h2>
-                <div class="info-list">
-                    <p><span class="label">Best Season:</span> December – April</p>
-                    <p><span class="label">Flight Cost:</span> <span id="flight-price">$250 – $450</span></p>
-                    <p><span class="label">Hotel Cost:</span> $110 – $300 / night</p>
-                </div>
-
-                <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
-                <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
-            </div>
-
+            <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+            <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
         </div>
 
-        <a href="website.html" class="nav-back">← Back to All Destinations</a>
+    </div>
 
-        <script>
-            // A simple JavaScript function to simulate fetching data
-            function checkLiveDeals() {
-                const resultElement = document.getElementById('deal-result');
-                const priceElement = document.getElementById('flight-price');
-                
-                resultElement.innerText = "Searching airlines...";
-                
-                // Wait 1.5 seconds to make it feel like it's "thinking"
-                setTimeout(() => {
-                    // Generate a random discount
-                    let randomDiscount = Math.floor(Math.random() * 50) + 20;
-                    
-                    priceElement.innerHTML = `<strike>$450</strike> <strong>$${450 - randomDiscount}</strong> (Flash Sale!)`;
-                    resultElement.innerText = `We found a discount of $${randomDiscount} active today!`;
-                }, 1500);
-            }
-        </script>
+    <a href="website.html" class="nav-back">← Back to All Destinations</a>
+
+    <script>
+        // A simple JavaScript function to simulate fetching data
+        function checkLiveDeals() {
+            const resultElement = document.getElementById('deal-result');
+            const priceElement = document.getElementById('flight-price');
+
+            resultElement.innerText = "Searching airlines...";
+
+            // Wait 1.5 seconds to make it feel like it's "thinking"
+            setTimeout(() => {
+                // Generate a random discount
+                let randomDiscount = Math.floor(Math.random() * 50) + 20;
+
+                priceElement.innerHTML = `<strike>$450</strike> <strong>$${450 - randomDiscount}</strong> (Flash Sale!)`;
+                resultElement.innerText = `We found a discount of $${randomDiscount} active today!`;
+            }, 1500);
+        }
+    </script>
 
 </body>
+
 </html>

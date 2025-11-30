@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selen Yildirim - Gengar Dev</title>
+
+    <!-- Retro pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <style>
+        /* Gengar theme colors */
+        :root {
+            --gengar-purple: #5b2b82;
+            --gengar-light: #c89cff;
+            --gengar-accent: #ff7bcb;
+            --dark-outline: #2b123f;
+            --night-sky: #160b24;
+        }
+
+        /* Background */
+        body {
+            background-color: var(--night-sky);
+            background-image:
+                radial-gradient(#3a1a5f 15%, transparent 16%),
+                radial-gradient(#3a1a5f 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            font-family: 'VT323', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--dark-outline);
+        }
+
+        /* Card container */
+        .card-container {
+            background-color: var(--gengar-purple);
+            border: 4px solid var(--dark-outline);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 360px;
+            text-align: center;
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.35);
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Inner content */
+        .card-inner {
+            background-color: #fdf7ff;
+            border: 2px solid var(--dark-outline);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Gengar image */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--gengar-accent);
+            object-fit: contain;
+            background-color: white;
+            animation: hop 0.6s infinite alternate;
+            box-shadow: 0 0 18px rgba(255, 123, 203, 0.7);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 10px 0 5px 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px var(--gengar-accent);
+            color: #fdf7ff;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            opacity: 0.95;
+            border-bottom: 2px dashed var(--gengar-accent);
+            color: #fdf7ff;
+        }
+
+        .info-group {
+            margin: 15px 0;
+            font-size: 1.4rem;
+        }
+
+        /* Skills badges */
+        .skills-badge {
+            background-color: var(--gengar-accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            border: 1px solid var(--dark-outline);
+            margin: 0 2px;
+        }
+
+        .small-note {
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        /* Button style for project links */
+        .link-btn {
+            display: block;
+            margin: 10px auto 0 auto;
+            padding: 8px 18px;
+            background-color: var(--dark-outline);
+            color: var(--gengar-light);
+            text-decoration: none;
+            font-size: 1.4rem;
+            border-radius: 8px;
+            border: 2px solid var(--gengar-accent);
+            transition: transform 0.1s, background-color 0.1s, color 0.1s;
+        }
+
+        .link-btn:hover {
+            background-color: var(--gengar-accent);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Tiny "back" link style */
+        .back-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1.3rem;
+            color: #fdf7ff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes hop {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* "Feet" at the bottom */
+        .feet {
+            display: flex;
+            justify-content: center;
+            gap: 150px;
+            margin-top: -20px;
+            z-index: -1;
+            position: relative;
+        }
+
+        .foot {
+            width: 60px;
+            height: 30px;
+            background-color: var(--gengar-accent);
+            border: 3px solid var(--dark-outline);
+            border-radius: 0 0 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+        <!-- Gengar image -->
+        <img src="gengar.png" alt="Gengar" class="profile-img">
+
+
+        <h1>Selen</h1>
+        <h2>Front-End Dev</h2>
+
+        <div class="card-inner">
+            <div class="info-group">
+                🎓 <strong>UHD · CS</strong>
+                <div class="small-note">Exploriva Travel Project</div>
+            </div>
+
+            <div class="info-group">
+                <span>Tech:</span>
+                <span class="skills-badge">HTML</span>
+                <span class="skills-badge">CSS</span>
+                <span class="skills-badge">JavaScript</span>
+            </div>
+
+            <div class="info-group small-note">
+                Built the <strong>Travel Tips</strong> page and the interactive
+                <strong>Reviews</strong> page so travelers get helpful advice and can
+                share their experiences.
+            </div>
+
+            <a href="tips.html" class="link-btn">
+                ✈ Travel Tips Page
+            </a>
+
+            <a href="reviews.html" class="link-btn">
+                ⭐ Reviews Page
+            </a>
+
+            <a href="about.html" class="back-link">
+                ← Back to Team Page
+            </a>
+        </div>
+
+        <div class="feet">
+            <div class="foot"></div>
+            <div class="foot"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

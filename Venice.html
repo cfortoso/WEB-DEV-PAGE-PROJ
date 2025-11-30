@@ -1,129 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta-name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venice – Italy</title>
+        <title>Venice – Italy</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+            rel="stylesheet">
 
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
-            line-height: 1.6;
-        }
+            body {
+                font-family: 'Open Sans', sans-serif;
+                background-color: #f0f4f8;
+                color: #333;
+                line-height: 1.6;
+            }
 
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        a { text-decoration: none; }
+            h1,
+            h2,
+            h3 {
+                font-family: 'Montserrat', sans-serif;
+            }
 
-        /* NAVBAR */
-        nav {
-            background-color: #0074D9;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+            a {
+                text-decoration: none;
+            }
 
-        nav a {
-            color: white;
-            font-weight: bold;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
+            /* NAVBAR */
+            nav {
+                background-color: #0074D9;
+                padding: 15px;
+                text-align: center;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
 
-        nav a:hover {
-            color: #b3d7ff;
-        }
+            nav a {
+                color: white;
+                font-weight: bold;
+                margin: 0 15px;
+                font-size: 1.1rem;
+                transition: color 0.3s;
+            }
 
-        /* Image*/
-        .hero {
-            background-image: 
-                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
+            nav a:hover {
+                color: #b3d7ff;
+            }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
+            /* Image*/
+            .hero {
+                background-image:
+                    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                    url('https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 60vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-align: center;
+            }
 
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
+            .hero-content h1 {
+                font-size: 4rem;
+                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            }
 
-        /* CONTAINER GRID */
-        .container {
-            max-width: 1100px;
-            margin: -50px auto 20px;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+            .hero-content p {
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
+            /* CONTAINER GRID */
+            .container {
+                max-width: 1100px;
+                margin: -50px auto 20px;
+                padding: 0 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
 
-        .card:hover { transform: translateY(-5px); }
+            .card {
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
 
-        .card h2 {
-            color: #008cba;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
+            .card:hover {
+                transform: translateY(-5px);
+            }
 
-        .info-list p {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
+            .card h2 {
+                color: #008cba;
+                margin-bottom: 15px;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
 
-        .label { font-weight: bold; color: #555; }
+            .info-list p {
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
 
-        /* BUTTON */
-        .btn-check {
-            background-color: #ff6b6b;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s;
-            margin-top: 15px;
-        }
+            .label {
+                font-weight: bold;
+                color: #555;
+            }
 
-        .btn-check:hover {
-            background-color: #ee5253;
-        }
+            /* BUTTON */
+            .btn-check {
+                background-color: #ff6b6b;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                transition: background 0.3s;
+                margin-top: 15px;
+            }
 
-        @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 2.5rem; }
-        }
-    </style>
+            .btn-check:hover {
+                background-color: #ee5253;
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    grid-template-columns: 1fr;
+                }
+
+                .hero-content h1 {
+                    font-size: 2.5rem;
+                }
+            }
+        </style>
 </head>
 
 <body>
@@ -135,6 +159,7 @@
         <a href="booking.html">Booking</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
+        <a href="reviews.html">Reviews</a>
     </nav>
 
     <div class="hero">
@@ -149,12 +174,13 @@
         <div class="card">
             <h2>Why Visit Venice?</h2>
             <p>
-                Venice is a magical canal city filled with gondolas, historic bridges, and unforgettable views. 
-                Wander through narrow alleyways, explore St. Mark’s Square, and float through iconic waterways on a gondola ride.
+                Venice is a magical canal city filled with gondolas, historic bridges, and unforgettable views.
+                Wander through narrow alleyways, explore St. Mark’s Square, and float through iconic waterways on a
+                gondola ride.
             </p>
             <br>
             <p>
-                Whether you're exploring islands like Burano and Murano or enjoying Italian cuisine by the water, 
+                Whether you're exploring islands like Burano and Murano or enjoying Italian cuisine by the water,
                 Venice is one of Europe's most enchanting destinations.
             </p>
         </div>
@@ -196,4 +222,5 @@
     </script>
 
 </body>
+
 </html>

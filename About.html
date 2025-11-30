@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>About Us | Exploriva Travel</title>
@@ -32,8 +33,15 @@
     }
 
     @keyframes slideDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .logo {
@@ -129,7 +137,7 @@
     .hero img {
       width: 100%;
       border-radius: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
 
     /* STATS */
@@ -145,7 +153,7 @@
       padding: 1.2rem;
       border-radius: 16px;
       text-align: center;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
 
     .stat-card h3 {
@@ -176,7 +184,7 @@
     .story img {
       width: 100%;
       border-radius: 18px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
 
     /* MISSION & VALUES */
@@ -191,7 +199,7 @@
       background: #fff;
       padding: 1.5rem;
       border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
     .mission-box h3 {
@@ -216,7 +224,7 @@
       background: #fff;
       padding: 1rem;
       border-radius: 14px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
     }
 
     .value-title {
@@ -270,7 +278,7 @@
     .team-intro img {
       width: 100%;
       border-radius: 18px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
 
     /* NEW SPECIFIC TEAM MEMBERS STYLES */
@@ -291,8 +299,9 @@
       background: #fff;
       padding: 2rem 1rem;
       border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      width: 200px; /* Fixed width for uniformity */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      /* Fixed width for uniformity */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -310,7 +319,8 @@
       object-fit: cover;
       margin-bottom: 1rem;
       background-color: #f0f2f5;
-      border: 3px solid #0077ff; /* Matching brand color */
+      border: 3px solid #0077ff;
+      /* Matching brand color */
     }
 
     .member-link {
@@ -339,221 +349,231 @@
 
 <body>
 
-<header>
-  <div class="logo">Exploriva Travel</div>
-  <nav>
-    <a href="website.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">Exploriva Travel</div>
+    <nav>
+      <a href="website.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="tips.html">Travel Tips</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="reviews.html">Reviews</a>
+    </nav>
+  </header>
 
-<main>
+  <main>
 
-  <section class="hero fade-in">
-    <div class="fade-in">
-      <div class="hero-tagline">Exploriva Travel • About Us</div>
-      <h1>Since 2025, we’ve been redefining the way the world explores.</h1>
-      <p>
-        When we founded Exploriva Travel, trip planning was confusing, time-consuming,
-        and filled with uncertainty. There was no single place to compare destinations,
-        flights, stays, and experiences. So we built one.
-      </p>
-      <p>
-        Today, Exploriva helps travelers discover new places, compare options easily,
-        and plan confidently — all in one intuitive platform.
-      </p>
+    <section class="hero fade-in">
+      <div class="fade-in">
+        <div class="hero-tagline">Exploriva Travel • About Us</div>
+        <h1>Since 2025, we’ve been redefining the way the world explores.</h1>
+        <p>
+          When we founded Exploriva Travel, trip planning was confusing, time-consuming,
+          and filled with uncertainty. There was no single place to compare destinations,
+          flights, stays, and experiences. So we built one.
+        </p>
+        <p>
+          Today, Exploriva helps travelers discover new places, compare options easily,
+          and plan confidently — all in one intuitive platform.
+        </p>
 
+        <br />
+        <a class="btn-primary" href="destinations.html">Explore Destinations</a>
+      </div>
+
+      <div>
+        <img src="https://boldhimalaya.com/wp-content/uploads/2024/12/Photography-Tours-in-Nepal.jpg" class="zoom-in"
+          alt="Exploriva travelers exploring scenic locations">
+      </div>
+    </section>
+
+    <section class="stats-section fade-in">
+      <div class="stat-card fade-in">
+        <h3>1+ Years</h3>
+        <p>Helping explorers discover the world with confidence.</p>
+      </div>
+      <div class="stat-card fade-in">
+        <h3>50K+</h3>
+        <p>Trips planned using Exploriva’s smart travel tools.</p>
+      </div>
+      <div class="stat-card fade-in">
+        <h3>20+</h3>
+        <p>Global travel partners and local experience providers.</p>
+      </div>
+      <div class="stat-card fade-in">
+        <h3>4.9★</h3>
+        <p>Average satisfaction from travelers worldwide.</p>
+      </div>
+    </section>
+
+    <section class="story fade-in">
+      <div class="fade-in">
+        <h2 class="section-title">Our Story</h2>
+
+        <p>
+          Exploriva Travel was founded in 2025 by a team of travelers who believed
+          planning a trip should be exciting — not stressful. They envisioned a platform
+          where anyone could compare flights, stays, and experiences with total clarity.
+        </p>
+
+        <p>
+          What began as a simple travel search engine has now grown into a full travel
+          discovery platform used by people worldwide. Our mission remains the same:
+          make exploring the world simpler, smarter, and more inspiring.
+        </p>
+      </div>
+
+      <div>
+        <img
+          src="https://media.istockphoto.com/id/891573112/photo/travel-planning-concept-on-map.jpg?s=612x612&w=0&k=20&c=fnxIqEEs7MwbYqLepUIEiVwP5VEQMjrJJqwJff-Saqw="
+          class="zoom-in" alt="Exploriva team planning global travel solutions">
+      </div>
+    </section>
+
+    <section class="mission-values fade-in">
+
+      <div class="mission-box fade-in">
+        <h2 class="section-title">Our Mission</h2>
+        <p>
+          Exploriva Travel exists to make travel effortless and meaningful. We believe
+          every traveler deserves honest information, transparent prices, and tools
+          that help them make confident decisions.
+        </p>
+
+        <h3>What We Believe</h3>
+        <ul>
+          <li>Travel should inspire, not overwhelm.</li>
+          <li>Transparency builds better travel experiences.</li>
+          <li>Every destination has a story worth exploring.</li>
+        </ul>
+      </div>
+
+      <div class="fade-in">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card fade-in">
+            <div class="value-title">Transparency</div>
+            Honest pricing, clear details, no hidden surprises.
+          </div>
+          <div class="value-card fade-in">
+            <div class="value-title">Innovation</div>
+            Always improving how the world discovers destinations.
+          </div>
+          <div class="value-card fade-in">
+            <div class="value-title">Community</div>
+            Supporting local cultures and authentic experiences.
+          </div>
+          <div class="value-card fade-in">
+            <div class="value-title">Trust</div>
+            Keeping your travel safe, reliable, and stress-free.
+          </div>
+          <div class="value-card fade-in">
+            <div class="value-title">Sustainability</div>
+            Promoting responsible, mindful ways to explore.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="timeline fade-in">
+      <h2 class="section-title">How Exploriva Became What It Is</h2>
       <br />
-      <a class="btn-primary" href="destinations.html">Explore Destinations</a>
-    </div>
+      <ul class="timeline-list">
 
-    <div>
-      <img src="https://boldhimalaya.com/wp-content/uploads/2024/12/Photography-Tours-in-Nepal.jpg" class="zoom-in" alt="Exploriva travelers exploring scenic locations">
-    </div>
-  </section>
+        <li class="timeline-item fade-in">
+          <div class="timeline-year">2025 — The Beginning</div>
+          Exploriva officially launches with the mission to make modern travel simpler, smarter, and more transparent.
+        </li>
 
-  <section class="stats-section fade-in">
-    <div class="stat-card fade-in">
-      <h3>1+ Years</h3>
-      <p>Helping explorers discover the world with confidence.</p>
-    </div>
-    <div class="stat-card fade-in">
-      <h3>50K+</h3>
-      <p>Trips planned using Exploriva’s smart travel tools.</p>
-    </div>
-    <div class="stat-card fade-in">
-      <h3>20+</h3>
-      <p>Global travel partners and local experience providers.</p>
-    </div>
-    <div class="stat-card fade-in">
-      <h3>4.9★</h3>
-      <p>Average satisfaction from travelers worldwide.</p>
-    </div>
-  </section>
+        <li class="timeline-item fade-in">
+          <div class="timeline-year">2025 — Hotels & Stays Expanded</div>
+          Hotel and stay comparisons are introduced, creating a unified platform for flights, accommodations, and
+          planning.
+        </li>
 
-  <section class="story fade-in">
-    <div class="fade-in">
-      <h2 class="section-title">Our Story</h2>
+        <li class="timeline-item fade-in">
+          <div class="timeline-year">2025 — Experiences & Activities Added</div>
+          Guided tours, cultural activities, and adventure experiences are added for complete itinerary planning.
+        </li>
 
-      <p>
-        Exploriva Travel was founded in 2025 by a team of travelers who believed
-        planning a trip should be exciting — not stressful. They envisioned a platform
-        where anyone could compare flights, stays, and experiences with total clarity.
-      </p>
-
-      <p>
-        What began as a simple travel search engine has now grown into a full travel
-        discovery platform used by people worldwide. Our mission remains the same:
-        make exploring the world simpler, smarter, and more inspiring.
-      </p>
-    </div>
-
-    <div>
-      <img src="https://media.istockphoto.com/id/891573112/photo/travel-planning-concept-on-map.jpg?s=612x612&w=0&k=20&c=fnxIqEEs7MwbYqLepUIEiVwP5VEQMjrJJqwJff-Saqw=" class="zoom-in" alt="Exploriva team planning global travel solutions">
-    </div>
-  </section>
-
-  <section class="mission-values fade-in">
-
-    <div class="mission-box fade-in">
-      <h2 class="section-title">Our Mission</h2>
-      <p>
-        Exploriva Travel exists to make travel effortless and meaningful. We believe
-        every traveler deserves honest information, transparent prices, and tools
-        that help them make confident decisions.
-      </p>
-
-      <h3>What We Believe</h3>
-      <ul>
-        <li>Travel should inspire, not overwhelm.</li>
-        <li>Transparency builds better travel experiences.</li>
-        <li>Every destination has a story worth exploring.</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="fade-in">
-      <h2 class="section-title">Our Values</h2>
-      <div class="values-grid">
-        <div class="value-card fade-in">
-          <div class="value-title">Transparency</div>
-          Honest pricing, clear details, no hidden surprises.
+    <section class="team-intro fade-in">
+      <div class="fade-in">
+        <h2 class="section-title">The Exploriva Team</h2>
+        <p>
+          We are a global team of developers, designers, travel experts, and creators
+          all united by a shared passion: helping the world explore with confidence.
+        </p>
+        <ul>
+          <li>Travel researchers curating the best destinations.</li>
+          <li>Engineering teams improving the platform daily.</li>
+          <li>Support teams guiding travelers every step of the way.</li>
+        </ul>
+      </div>
+
+      <div>
+        <img
+          src="https://lovinglifeco.com/wp-content/uploads/2023/05/employees-brainstorming-in-a-team-meeting-1024x726.jpg"
+          class="zoom-in" alt="Exploriva team members collaborating">
+      </div>
+    </section>
+
+    <section class="team-profiles-section fade-in">
+      <h2 class="section-title">Meet Our Leads</h2>
+
+      <div class="team-grid">
+
+        <div class="team-member-card fade-in">
+          <img src="picture.png" alt="Cesar Fortoso" class="member-icon">
+          <a href="cesar_profile.html" class="member-link">Cesar Fortoso</a>
         </div>
-        <div class="value-card fade-in">
-          <div class="value-title">Innovation</div>
-          Always improving how the world discovers destinations.
+
+        <div class="team-member-card fade-in">
+          <img src="picture.png" alt="Joseph Kang" class="member-icon">
+          <a href="joseph_profile.html" class="member-link">Joseph Kang</a>
         </div>
-        <div class="value-card fade-in">
-          <div class="value-title">Community</div>
-          Supporting local cultures and authentic experiences.
+
+        <div class="team-member-card fade-in">
+          <img src="picture.png" alt="Punjan Subedi" class="member-icon">
+          <a href="punjan_profile.html" class="member-link">Punjan Subedi</a>
         </div>
-        <div class="value-card fade-in">
-          <div class="value-title">Trust</div>
-          Keeping your travel safe, reliable, and stress-free.
+
+        <div class="team-member-card fade-in">
+          <img src="https://www.giantbomb.com/a/uploads/scale_small/9/95666/1607638-rick_kirby_s_dream_land_2.png"
+            alt="Phat Duong" class="member-icon">
+          <a href="PhatDevPage.html" class="member-link">Phat Duong</a>
         </div>
-        <div class="value-card fade-in">
-          <div class="value-title">Sustainability</div>
-          Promoting responsible, mindful ways to explore.
+
+        <div class="team-member-card fade-in">
+          <img src="gengar.png" alt="Gengar" class="member-icon">
+          <a href="selen_profile.html" class="member-link">Selen Yildirim</a>
         </div>
+
       </div>
-    </div>
+    </section>
 
-  </section>
+  </main>
 
-  <section class="timeline fade-in">
-  <h2 class="section-title">How Exploriva Became What It Is</h2>
-  <br />
-  <ul class="timeline-list">
+  <footer>
+    © <span id="year"></span> Exploriva Travel. All rights reserved.
+  </footer>
 
-    <li class="timeline-item fade-in">
-      <div class="timeline-year">2025 — The Beginning</div>
-      Exploriva officially launches with the mission to make modern travel simpler, smarter, and more transparent.
-    </li>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    <li class="timeline-item fade-in">
-      <div class="timeline-year">2025 — Hotels & Stays Expanded</div>
-      Hotel and stay comparisons are introduced, creating a unified platform for flights, accommodations, and planning.
-    </li>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
 
-    <li class="timeline-item fade-in">
-      <div class="timeline-year">2025 — Experiences & Activities Added</div>
-      Guided tours, cultural activities, and adventure experiences are added for complete itinerary planning.
-    </li>
-
-  </ul>
-</section>
-
-  <section class="team-intro fade-in">
-    <div class="fade-in">
-      <h2 class="section-title">The Exploriva Team</h2>
-      <p>
-        We are a global team of developers, designers, travel experts, and creators
-        all united by a shared passion: helping the world explore with confidence.
-      </p>
-      <ul>
-        <li>Travel researchers curating the best destinations.</li>
-        <li>Engineering teams improving the platform daily.</li>
-        <li>Support teams guiding travelers every step of the way.</li>
-      </ul>
-    </div>
-
-    <div>
-      <img src="https://lovinglifeco.com/wp-content/uploads/2023/05/employees-brainstorming-in-a-team-meeting-1024x726.jpg" class="zoom-in" alt="Exploriva team members collaborating">
-    </div>
-  </section>
-
-  <section class="team-profiles-section fade-in">
-    <h2 class="section-title">Meet Our Leads</h2>
-    
-    <div class="team-grid">
-      
-      <div class="team-member-card fade-in">
-        <img src="picture.png" alt="Cesar Fortoso" class="member-icon">
-        <a href="cesar_profile.html" class="member-link">Cesar Fortoso</a>
-      </div>
-
-      <div class="team-member-card fade-in">
-        <img src="picture.png" alt="Joseph Kang" class="member-icon">
-        <a href="joseph_profile.html" class="member-link">Joseph Kang</a>
-      </div>
-
-      <div class="team-member-card fade-in">
-        <img src="picture.png" alt="Punjan Subedi" class="member-icon">
-        <a href="punjan_profile.html" class="member-link">Punjan Subedi</a>
-      </div>
-
-      <div class="team-member-card fade-in">
-        <img src="https://www.giantbomb.com/a/uploads/scale_small/9/95666/1607638-rick_kirby_s_dream_land_2.png" alt="Phat Duong" class="member-icon">
-        <a href="PhatDevPage.html" class="member-link">Phat Duong</a>
-      </div>
-
-      <div class="team-member-card fade-in">
-        <img src="picture.png" alt="Selen Yildirim" class="member-icon">
-        <a href="selen_profile.html" class="member-link">Selen Yildirim</a>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © <span id="year"></span> Exploriva Travel. All rights reserved.
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.fade-in, .zoom-in')
-    .forEach(el => observer.observe(el));
-</script>
+    document.querySelectorAll('.fade-in, .zoom-in')
+      .forEach(el => observer.observe(el));
+  </script>
 
 </body>
+
 </html>

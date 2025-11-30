@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Traveler Reviews | Exploriva Travel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0a2540;
+            color: #fff;
+            padding: 1rem 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem 4%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #0a2540;
+            margin-bottom: 0.3rem;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 2fr 1.4fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reviews list */
+        .reviews-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 14px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .review-card {
+            border-bottom: 1px solid #e0e4ee;
+            padding-bottom: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .review-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.2rem;
+        }
+
+        .review-name {
+            font-weight: bold;
+            color: #0a2540;
+        }
+
+        .review-destination {
+            font-size: 0.85rem;
+            color: #0077ff;
+        }
+
+        .review-stars {
+            color: #f7b500;
+            font-size: 0.9rem;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-top: 0.2rem;
+        }
+
+        /* Form */
+        .form-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 14px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-box h2 {
+            font-size: 1.4rem;
+            color: #0a2540;
+            margin-bottom: 0.7rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.7rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+            color: #333;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid #c8d0e0;
+            font-size: 0.9rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #0077ff;
+            color: #fff;
+            padding: 0.6rem 1.3rem;
+            border-radius: 999px;
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #005fcc;
+        }
+
+        .error {
+            color: #c0392b;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .success {
+            color: #27ae60;
+            font-size: 0.9rem;
+            margin-top: 0.4rem;
+        }
+
+        footer {
+            background: #0a2540;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Exploriva Travel</div>
+        <nav>
+            <a href="website.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="Booking.html">Booking</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="reviews.html">Reviews</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Traveler Reviews</h1>
+        <p class="subtitle">
+            Read what other travelers are saying about their trips — and share your own experience with Exploriva.
+        </p>
+
+        <div class="layout">
+            <!-- Existing reviews -->
+            <section class="reviews-box" id="reviews-list">
+                <!-- Sample reviews -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <span class="review-name">Alex M.</span>
+                            <span class="review-destination"> · Paris</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">
+                        Used Exploriva to plan a 5-day Paris trip — the suggestions and tips made everything so much
+                        easier.
+                    </p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <span class="review-name">Jordan R.</span>
+                            <span class="review-destination"> · Tokyo</span>
+                        </div>
+                        <div class="review-stars">★★★★☆</div>
+                    </div>
+                    <p class="review-text">
+                        Loved the Travel Tips section. It helped me pack smarter and avoid overpacking.
+                    </p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div>
+                            <span class="review-name">Sam K.</span>
+                            <span class="review-destination"> · Cancun</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">
+                        Great starting point for comparing destinations. I liked having everything on one site.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Review form -->
+            <section class="form-box">
+                <h2>Leave a Review</h2>
+                <p class="form-note">
+                    Share your feedback to help future travelers plan their trips.
+                </p>
+
+                <form id="review-form">
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" placeholder="e.g., Selen Y." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination*</label>
+                        <select id="destination" required>
+                            <option value="">Select a destination</option>
+                            <option value="Venice">Venice</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Cancun">Cancun</option>
+                            <option value="Bahamas">Bahamas</option>
+                            <option value="Mexico City">Mexico City</option>
+                            <option value="Other">Other / Multiple</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Rating (1–5)*</label>
+                        <select id="rating" required>
+                            <option value="">Choose a rating</option>
+                            <option value="5">5 - Amazing</option>
+                            <option value="4">4 - Great</option>
+                            <option value="3">3 - Good</option>
+                            <option value="2">2 - Okay</option>
+                            <option value="1">1 - Not great</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Your Review*</label>
+                        <textarea id="comment" placeholder="Share your experience..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Review</button>
+                    <div id="form-error" class="error"></div>
+                    <div id="form-success" class="success"></div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        © <span id="year"></span> Exploriva Travel · Traveler Reviews
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const form = document.getElementById('review-form');
+        const reviewsList = document.getElementById('reviews-list');
+        const errorBox = document.getElementById('form-error');
+        const successBox = document.getElementById('form-success');
+
+        function buildStars(rating) {
+            const full = '★'.repeat(rating);
+            const empty = '☆'.repeat(5 - rating);
+            return full + empty;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            errorBox.textContent = '';
+            successBox.textContent = '';
+
+            const name = document.getElementById('name').value.trim();
+            const destination = document.getElementById('destination').value;
+            const ratingValue = document.getElementById('rating').value;
+            const comment = document.getElementById('comment').value.trim();
+
+            if (!name || !destination || !ratingValue || !comment) {
+                errorBox.textContent = 'Please fill in all required fields.';
+                return;
+            }
+
+            const rating = parseInt(ratingValue);
+
+            // Create review card element
+            const card = document.createElement('div');
+            card.className = 'review-card';
+
+            card.innerHTML = `
+      <div class="review-header">
+        <div>
+          <span class="review-name"></span>
+          <span class="review-destination"> · ${destination}</span>
+        </div>
+        <div class="review-stars">${buildStars(rating)}</div>
+      </div>
+      <p class="review-text"></p>
+    `;
+
+            card.querySelector('.review-name').textContent = name;
+            card.querySelector('.review-text').textContent = comment;
+
+            // Add new review to the top
+            reviewsList.insertBefore(card, reviewsList.firstChild);
+
+            // Clear form
+            form.reset();
+            successBox.textContent = 'Thank you! Your review has been added.';
+        });
+    </script>
+
+</body>
+
+</html>

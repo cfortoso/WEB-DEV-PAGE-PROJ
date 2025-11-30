@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinations – Dream Travels</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Open Sans', sans-serif;
             background-color: #f0f4f8;
             color: #333;
         }
 
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        a { text-decoration: none; }
+        h1,
+        h2,
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
 
         /* --- NAVIGATION BAR --- */
         nav {
             background-color: #0074D9;
             padding: 15px;
             text-align: center;
-            position: sticky; /* Keeps nav at top when scrolling */
+            position: sticky;
+            /* Keeps nav at top when scrolling */
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav a {
@@ -40,12 +55,13 @@
         }
 
         nav a:hover {
-            color: #b3d7ff; /* Lighter blue on hover */
+            color: #b3d7ff;
+            /* Lighter blue on hover */
         }
 
         /* --- HERO SECTION --- */
         header {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800');
             background-size: cover;
             background-position: center;
             height: 40vh;
@@ -58,8 +74,15 @@
             padding: 20px;
         }
 
-        header h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        header p { font-size: 1.2rem; font-weight: 300; }
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
 
 
         /* --- Grid layout --- */
@@ -80,8 +103,9 @@
         .card {
             background: white;
             border-radius: 12px;
-            overflow: hidden;       /* Ensures image corners stay rounded */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            /* Ensures image corners stay rounded */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -89,13 +113,14 @@
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
         }
 
         .card-img {
             width: 100%;
             height: 200px;
-            object-fit: cover; /* Crops image nicely without squishing */
+            object-fit: cover;
+            /* Crops image nicely without squishing */
         }
 
         .card-content {
@@ -123,7 +148,6 @@
             background-color: #008cba;
             color: white;
         }
-
     </style>
 </head>
 
@@ -136,18 +160,21 @@
 
     <nav>
         <a href="website.html">Home</a>
-        <a href="destinations.html" style="background-color: white; color: #0074D9; padding: 5px 15px; border-radius: 20px;">Destinations</a>
+        <a href="destinations.html"
+            style="background-color: white; color: #0074D9; padding: 5px 15px; border-radius: 20px;">Destinations</a>
         <a href="tips.html">Travel Tips</a>
         <a href="booking.html">Booking</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
+        <a href="reviews.html">Reviews</a>
     </nav>
 
     <div class="container">
         <div class="destinations-grid">
 
             <a href="cancun.html" class="card">
-                <img src="https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg" alt="Cancun" class="card-img">
+                <img src="https://vivalatravelista.com/wp-content/uploads/2022/11/Is-Cancun-in-the-Caribbean.jpg"
+                    alt="Cancun" class="card-img">
                 <div class="card-content">
                     <h3>Cancún, Mexico</h3>
                     <p>Beaches & Ruins</p>
@@ -156,7 +183,8 @@
             </a>
 
             <a href="venice.html" class="card">
-                <img src="https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg" alt="Venice" class="card-img">
+                <img src="https://hips.hearstapps.com/bpc.h-cdn.co/assets/17/27/1600x800/landscape-1499279574-venice-italy.jpg"
+                    alt="Venice" class="card-img">
                 <div class="card-content">
                     <h3>Venice, Italy</h3>
                     <p>Canals & History</p>
@@ -165,7 +193,8 @@
             </a>
 
             <a href="tokyo.html" class="card">
-                <img src="https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685" alt="Tokyo" class="card-img">
+                <img src="https://media.audleytravel.com/-/media/images/home/north-asia-and-russia/japan/activities/tokyo-gettyimages-1131743616-1000x3000.jpg?q=79&w=1920&h=685"
+                    alt="Tokyo" class="card-img">
                 <div class="card-content">
                     <h3>Tokyo, Japan</h3>
                     <p>Neon & Tradition</p>
@@ -183,7 +212,8 @@
             </a>
 
             <a href="mexico_city.html" class="card">
-                <img src="https://cdn.britannica.com/08/95008-050-1BA29F61/Central-Mexico-City.jpg" alt="Mexico City" class="card-img">
+                <img src="https://cdn.britannica.com/08/95008-050-1BA29F61/Central-Mexico-City.jpg" alt="Mexico City"
+                    class="card-img">
                 <div class="card-content">
                     <h3>Mexico City</h3>
                     <p>Culture & Cuisine</p>
@@ -204,4 +234,5 @@
     </div>
 
 </body>
+
 </html>

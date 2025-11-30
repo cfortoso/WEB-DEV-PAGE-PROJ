@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,20 +20,23 @@
             background-position: center;
             height: 250px;
             color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        header h1 { font-size: 3rem; margin: 0; }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
 
         nav {
             background-color: #0074D9;
             padding: 15px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: relative; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
             z-index: 10;
         }
 
@@ -44,8 +48,10 @@
             font-size: 1.1rem;
             transition: color 0.3s;
         }
-        
-        nav a:hover { color: #cce5ff; }
+
+        nav a:hover {
+            color: #cce5ff;
+        }
 
         section {
             padding: 20px;
@@ -58,10 +64,10 @@
             background: white;
             padding: 30px;
             /* Pushes the box down so it does not overlap the menu */
-            margin: 40px auto; 
+            margin: 40px auto;
             max-width: 500px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             position: relative;
         }
 
@@ -85,7 +91,7 @@
             transition: border-color 0.3s;
         }
 
-        .booking-box input:focus, 
+        .booking-box input:focus,
         .booking-box select:focus {
             border-color: #0074D9;
             outline: none;
@@ -134,7 +140,9 @@
             text-align: left;
         }
 
-        .hidden { display: none; }
+        .hidden {
+            display: none;
+        }
 
         footer {
             background-color: #333;
@@ -146,6 +154,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -155,11 +164,12 @@
     <nav>
         <a href="website.html">Home</a>
         <a href="destinations.html">Destinations</a>
-        <a href="TravelTips.html">Travel Tips</a>
+        <a href="tips.html">Travel Tips</a>
         <a href="booking.html">Booking</a>
         <a href="About.html">About us</a>
         <a href="Contact.html">Contact us</a>
-        
+        <a href="reviews.html">Reviews</a>
+
     </nav>
 
     <section>
@@ -216,7 +226,7 @@
 
     <script>
         // Sets the minimum date to today so users cannot pick past dates
-        window.onload = function() {
+        window.onload = function () {
             const today = new Date().toISOString().split('T')[0];
             document.getElementById("date").setAttribute('min', today);
             calculateTotal();
@@ -226,19 +236,19 @@
         function calculateTotal() {
             const destSelect = document.getElementById("destination");
             const peopleInput = document.getElementById("people");
-            
+
             // Gets the price from the HTML data attribute
             const selectedOption = destSelect.options[destSelect.selectedIndex];
             const pricePerPerson = selectedOption.getAttribute('data-price') || 0;
             const peopleCount = peopleInput.value || 0;
-            
+
             const total = pricePerPerson * peopleCount;
             document.getElementById("price-display").innerText = "Total Cost: $" + total.toLocaleString();
         }
 
         // Adds spaces to the credit card number automatically as user types
         document.getElementById('cardNumber').addEventListener('input', function (e) {
-            let value = e.target.value.replace(/\D/g, ''); 
+            let value = e.target.value.replace(/\D/g, '');
             value = value.replace(/(.{4})/g, '$1 ').trim();
             e.target.value = value;
         });
@@ -249,9 +259,9 @@
             const cardDetails = document.getElementById("card-details");
 
             if (paymentMethod === "Credit Card" || paymentMethod === "Debit Card") {
-                cardDetails.style.display = "block"; 
+                cardDetails.style.display = "block";
             } else {
-                cardDetails.style.display = "none"; 
+                cardDetails.style.display = "none";
             }
         }
 
@@ -268,7 +278,7 @@
             const payment = document.getElementById("payment").value;
             // Gets the card number input
             const cardNumber = document.getElementById("cardNumber").value;
-            
+
             // This area will display the booking result
             const resultBox = document.getElementById("result");
 
@@ -281,9 +291,9 @@
 
             // Checks if card number is valid if paying by card
             if ((payment === "Credit Card" || payment === "Debit Card") && cardNumber.length < 15) {
-                 resultBox.style.display = "block"; 
-                 resultBox.innerHTML = "<span style='color:red'>⚠ Please enter a valid card number.</span>";
-                 return;
+                resultBox.style.display = "block";
+                resultBox.innerHTML = "<span style='color:red'>⚠ Please enter a valid card number.</span>";
+                return;
             }
 
             // Checks if the email is valid using a simple pattern
@@ -291,7 +301,7 @@
 
             // If email is invalid, show error
             if (!emailPattern.test(email)) {
-                resultBox.style.display = "block"; 
+                resultBox.style.display = "block";
                 resultBox.innerHTML = "<span style='color:red'>⚠ Please enter a valid email address.</span>";
                 return;
             }
@@ -302,7 +312,7 @@
             const total = price * people;
 
             // Shows the booking confirmation message on the page
-            resultBox.style.display = "block"; 
+            resultBox.style.display = "block";
             resultBox.innerHTML =
                 `<h3 style="margin-top:0; color:#27ae60">Booking Confirmed!</h3>` +
                 `<strong>Trip:</strong> ${destination}<br>` +
@@ -313,4 +323,5 @@
     </script>
 
 </body>
+
 </html>
