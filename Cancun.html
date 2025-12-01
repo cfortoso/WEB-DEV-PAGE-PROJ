@@ -156,6 +156,50 @@
             background-color: #ee5253;
         }
 
+                .btn-check,
+        .btn-book {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-check {
+            background-color: #ff6b6b;
+            color: white;
+            margin-top: 14px;
+        }
+
+        .btn-check:hover {
+            background-color: #ee5253;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(238, 82, 83, 0.4);
+        }
+
+        .btn-book {
+            background-color: #28a745;
+            color: white;
+            margin-top: 14px;
+        }
+
+        .btn-book:hover {
+            background-color: #218838;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(33, 136, 56, 0.4);
+        }
+        .card-actions {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
         /* --- RESPONSIVE (Mobile view) --- */
         @media (max-width: 768px) {
             .container {
@@ -213,7 +257,14 @@
                 <p><span class="label">Hotel Cost:</span> $110 – $300 / night</p>
             </div>
 
-            <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+           <!-- <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button> */-->
+
+            <div class="card-actions">
+                <button class="btn-check" onclick="checkLiveDeals()">Check Today's Deals</button>
+                <a href="booking.html" class="btn-book">Book Now</a>
+            </div>
+
+
             <p id="deal-result" style="margin-top:10px; font-size: 0.9rem; color: green;"></p>
         </div>
 
