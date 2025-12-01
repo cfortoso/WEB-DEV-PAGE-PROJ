@@ -208,17 +208,18 @@
 
     </div>
 
-    <a href="website.html" class="nav-back">← Back to All Destinations</a>
+    <a href="destinations.html" class="nav-back">
+        ← Back to All Destinations
+    </a>
 
     <script>
-        // A simple JavaScript function to simulate fetching data
+
         function checkLiveDeals() {
             const resultElement = document.getElementById('deal-result');
             const priceElement = document.getElementById('flight-price');
 
             resultElement.innerText = "Searching airlines...";
 
-            // Wait 1.5 seconds to make it feel like it's "thinking"
             setTimeout(() => {
                 // Generate a random discount
                 let randomDiscount = Math.floor(Math.random() * 50) + 20;
